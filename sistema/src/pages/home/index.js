@@ -49,7 +49,7 @@ const HomePage = ({history}) => {
               required
             />
             <span class="show" onClick={handlePassword}>
-              {passwordShowing ? "HIDE" : "SHOW"}
+              {passwordShowing ? "OCULTAR" : "MOSTRAR"}
             </span>
             <label>Senha</label>
           </FormInput>

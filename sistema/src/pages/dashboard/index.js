@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Container, FormContainer } from "./styles";
 
-const DashPage = () =>
-<h1>PAINEL DE CONTROLE DO SISTEMA BY: "DEVHIJAZI" AINDA EM CONSTRUÇÃO</h1>
-
-
-
-
-export default DashPage;
+const dashBoardPage = ({ history }) => {
+  return (
+    <Container>
+      <FormContainer>
+        <h3>SISTEMA</h3>
+      </FormContainer>
+    </Container>
+  );
+};
+export default dashBoardPage;

@@ -5,7 +5,7 @@ export default createGlobalStyle`
     margin:0;
     padding:0;
     box-sizing:border-box;
-    text-align:center;
+
 }
 html{
     background: #e8e8e8;
