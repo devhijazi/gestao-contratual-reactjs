@@ -12,13 +12,13 @@ const FooterComponent = () => {
     <Container>
       <DeveloperContainer>
         <DeveloperContent>
-          2020 SISTEMA PRIVADO PARA:
+          PRIVADO PARA:
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="http://www.campogrande.ms.gov.br/impcg/"
           >
-             IMPCG
+             [IMPCG]
           </a>
         </DeveloperContent>
       </DeveloperContainer>

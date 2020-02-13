@@ -23,7 +23,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 0 100px;
   height: 40px; /*Largua da navbar*/
-  background-color: greenyellow; /*Cor da background da navbar*/
+  background-color: darkblue; /*Cor da background da navbar*/
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 500px) {
@@ -94,7 +94,7 @@ export const Navigation = styled.div`
 `;
 export const NavbarItem = styled.li`
   a {
-    color: black;
+    color: whitesmoke;
     font-weight: 500;
     text-transform: uppercase;
     transition: opacity 300ms;

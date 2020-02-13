@@ -17,7 +17,7 @@ export const Content = styled.div`
   display: flex;
   width: 100%;
   height: 20px;
-  background-color: yellowgreen;
+  background-color: darkblue;
 `;
 export const DeveloperContainer = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ export const DeveloperContainer = styled.div`
   font-size: 14px;
   font-weight: 300;
   color: #000;
-  background-color: greenyellow;
+  background-color: darkblue;
 
   
 `;
@@ -34,14 +34,16 @@ export const DeveloperContainer = styled.div`
 export const DeveloperContent = styled.div`
     font-size: 12px;
     font-weight: 300;
-    color: #000;
+    color: whitesmoke;
 
     a{
         position: relative;
         opacity: 1;
-        color: #0000EE;
+        color: white;
         transition: color 300ms ease;
         text-transform: uppercase;
+        margin: 5px !important
+     
     }
     a:after{
         content: '';
@@ -54,6 +56,7 @@ export const DeveloperContent = styled.div`
         background: rgb(255,255,255);
         border-radius: 10px;
         transition: all 0.5s ease 0s;
+    
     }
     a:hover{
         opacity: 1;
