@@ -1,27 +1,20 @@
-  
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   user-select: none;
+
   header,
   nav,
   ul {
     display: flex;
     align-items: center;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     width: 100%;
+
     ul {
       display: block;
     }
-  }
-`;
-
-export const RowMobileContent = styled.div`
-  display: none;
-  @media (max-width: 900px) {
-    display: block;
-    height: 80px;
   }
 `;
 
@@ -29,9 +22,11 @@ export const Header = styled.header`
   z-index: 1;
   align-items: center;
   padding: 0 100px;
-  height: 80px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
-  @media (max-width: 900px) {
+  height: 40px; /*Largua da navbar*/
+  background-color: greenyellow; /*Cor da background da navbar*/
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 500px) {
     position: fixed;
     width: 100%;
     top: 0;
@@ -42,7 +37,7 @@ export const Header = styled.header`
 `;
 
 export const FixedItems = styled.div`
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     padding: 10px 20px;
     display: flex;
     width: 100%;
@@ -50,75 +45,67 @@ export const FixedItems = styled.div`
     justify-content: space-between;
   }
 `;
-
 export const LogoStyle = styled.img`
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
 `;
-
 export const Navigation = styled.div`
   display: flex;
   width: 100%;
-  height: 60%;
+  height: 50%;
   align-items: center;
   justify-content: space-between;
   margin-left: 20px;
   padding-left: 20px;
-  border-left: 1px solid rgba(250, 250, 250, 0.3);
+  border-left: 1px solid rgba(250, 250, 250, 0.5);
+
   li {
-    margin-right: 15px;
+    margin-right: 10px;
   }
   li:last-child {
-    margin-right: 0;
+    margin-right: 0px;
   }
   li a {
-    opacity: ${props => !props.activePage && '1'} !important;
+    opacity: 1;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     position: fixed;
     display: block;
     z-index: 1;
     width: 100%;
     height: 100vh;
     transform: translateX(-100%);
+    background-color: black;
     border: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    ul {
-      width: 100%;
-    }
-    li {
-      display: flex;
-      justify-content: center;
-      margin: 0 !important;
-    }
-    nav {
-      flex-direction: column;
-    }
-    ${props =>
-      props.open &&
-      css`
-        transition: transform 500ms;
-        transform: translateX(0) !important;
-      `}
+  }
+  ul{
+    width: 100%
+  }
+  li{
+    display:flex;
+    justify-content: center;
+    margin: 10px !important
+  }
+  nav{
+    flex-direction: inline;
   }
 `;
-
-export const NavItem = styled.li`
+export const NavbarItem = styled.li`
   a {
-    color: ${props => props.theme.header.color};
-    font-weight: 600;
+    color: black;
+    font-weight: 500;
     text-transform: uppercase;
-    opacity: ${props => !props.active && 0.8};
     transition: opacity 300ms;
   }
-  @media (min-width: 901px) {
+  @media (min-width: 900px) {
     a {
       position: relative;
       top: 1px;
     }
     a:after {
-      content: '.';
+      content: ".";
       position: absolute;
       margin: auto;
       bottom: 0;
@@ -136,20 +123,13 @@ export const NavItem = styled.li`
     a:hover:after {
       width: 100%;
     }
-    ${props =>
-      props.active &&
-      css`
-        a:after {
-          width: 100%;
-        }
-      `}
-  }
-  @media (max-width: 900px) {
-    a {
-      text-align: center;
-      padding: 20px 0;
-      width: 100%;
-      border: none !important;
+    @media (max-width: 900px) {
+      a {
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        border: none !important;
+      }
     }
   }
 `;
@@ -159,66 +139,10 @@ export const ResponsiveContainer = styled.div`
   display: none;
   align-items: center;
   justify-content: center;
-  @media (max-width: 900px) {
+
+  @media (max-width: 500px) {
     display: flex;
   }
 `;
 
-export const ResponsiveButton = styled.button`
-  cursor: pointer;
-  background: none;
-  border: none;
-  width: 40px;
-  height: 40px;
-  span {
-    display: block;
-    width: 40px;
-    margin: 10px 0;
-    background-color: #fff;
-    height: 1px;
-    transform-origin: center;
-    transition-duration: 200ms;
-    transition-property: background-color, opacity, transform;
-    transition-timing-function: ease-out;
-  }
-  ${props =>
-    props.open &&
-    css`
-      span {
-        margin: 0;
-      }
-      span:nth-child(1) {
-        transform: rotate(45deg);
-      }
-      span:nth-child(2) {
-        display: none;
-      }
-      span:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-    `}
-`;
 
-export const BrightnessStyle = styled.div`
-  & > * {
-    color: #fff !important;
-  }
-  button {
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.6));
-  }
-  @media (min-width: 901px) {
-    margin-left: 20px;
-  }
-  @media (max-width: 900px) {
-    * {
-      border-radius: 0;
-    }
-    &,
-    button {
-      width: 100%;
-    }
-    button {
-      padding: 10px 0;
-    }
-  }
-`;

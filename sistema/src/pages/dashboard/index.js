@@ -1,17 +1,16 @@
 import React from "react";
 import { Container, FormContainer } from "./styles";
 
-import Navbar from '../../components/Header';
 
-const dashBoardPage = ({ history }) => {
+
+const dashBoardPage = ({ }) => {
   return (
-    <Navbar>
-    <Container>
-      <FormContainer>
-        <h3>SISTEMA</h3>
-      </FormContainer>
-    </Container>
-    </Navbar>
+      <Container>
+        <FormContainer>
+
+        </FormContainer>
+      </Container>
+
   );
 };
 export default dashBoardPage;

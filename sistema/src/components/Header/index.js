@@ -1,74 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-import Logo from "../../assets/img/Logo.png";
+import Logo from "../../assets/img/brasao.png";
 
 import {
   Container,
-  RowMobileContent,
   Header,
-  FixedItems,
   LogoStyle,
   Navigation,
+  NavbarItem,
   ResponsiveContainer,
-  ResponsiveButton,
-  NavItem,
-  NavbarText
+  FixedItems
 } from "./styles";
 
 const HeaderComponent = props => {
-
-  const [headerOpen, setHeaderOpen] = useState(false);
-  const [activePage, setActivePage] = useState(false);
-  const headerToggle = () => setHeaderOpen(!headerOpen);
-
-  const HeaderItemWrapper = ({ path, children, ...config }) => {
-   const active = path === props.location.pathname;
-    if (active) setActivePage(true);
-   return (
-     <NavItem active={active} {...config}>
-        {children}
-      </NavItem>
-    );
-  };
   return (
     <Container>
-      <RowMobileContent>
-        <Header>
-          <FixedItems>
-            <Link to="/">
-              <LogoStyle src={Logo} />
-            </Link>
-            <ResponsiveContainer>
-              <ResponsiveButton open={headerOpen} onClick={headerToggle}>
-                <span /> <span /> <span />
-              </ResponsiveButton>
-            </ResponsiveContainer>
-          </FixedItems>
-          <Navigation open={headerOpen} activePage={activePage}>
-            <nav>
-              <ul onClick={headerToggle}>
-                <HeaderItemWrapper path="/">
-                  <Link to="/">Cadastro</Link>
-                </HeaderItemWrapper>
-                <HeaderItemWrapper path="/lista">
-                  <Link to="/lista">Cadastrados</Link>
-                </HeaderItemWrapper>
-                <HeaderItemWrapper path="/remember">
-                  <Link to="/remember">A Vencer</Link>
-                </HeaderItemWrapper>
-              </ul>
-            </nav>
-            <nav>
-              <ul onClick={headerToggle}>
-                <NavItem>
-                  <Link to="/dashboard">Logado</Link>
-                </NavItem>
-              </ul>
-            </nav>
-          </Navigation>
-        </Header>
-      </RowMobileContent>
+      <Header>
+        <FixedItems>
+          <Link to="/">
+            <LogoStyle src={Logo} />
+          </Link>
+          <ResponsiveContainer>
+            <span /> <span /> <span />
+          </ResponsiveContainer>
+        </FixedItems>
+        <Navigation>
+          <nav>
+            <ul>
+              <NavbarItem path="/">
+                <Link to="/">Cadastro</Link>
+              </NavbarItem>
+              <NavbarItem path="/">
+                <Link to="/">Lista</Link>
+              </NavbarItem>
+              <NavbarItem path="/">
+                <Link to="/">Notificações</Link>
+              </NavbarItem>
+            </ul>
+          </nav>
+          <nav>
+            <NavbarItem>
+              <Link to="/#">Conta</Link>
+            </NavbarItem>
+          </nav>
+        </Navigation>
+      </Header>
     </Container>
   );
 };

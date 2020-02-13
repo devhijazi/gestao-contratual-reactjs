@@ -37,7 +37,7 @@ export const FormButton = styled.button`
   border-radius: 10px;
   color: #fff;
   background: linear-gradient(to right, #bdc3c7, #2c3e50);
-  background: linear-gradient(to right, #f7ff00, #db36a4);
+  /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
   transition: 400ms all;
 
   :hover {
