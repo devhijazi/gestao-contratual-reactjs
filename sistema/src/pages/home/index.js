@@ -37,7 +37,7 @@ const HomePage = ({history}) => {
     <Container>
       <form onSubmit={handleSubmit} onChange={setData}>
         <FormContainer>
-          <h3>LOGIN</h3>
+          <h3>ACESSO RESTRITO</h3>
           <FormInput>
             <Input name="email" type="text" required />
             <label>Email</label>

@@ -23,7 +23,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 0 100px;
   height: 40px; /*Largua da navbar*/
-  background-color: darkblue; /*Cor da background da navbar*/
+  background: linear-gradient(#7474bf,#348ac7); /*Cor da background da navbar*/
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 500px) {
