@@ -7,6 +7,7 @@ export const Container = styled.div`
   padding: 20px 0;
   justify-content: center;
   align-items: center;
+
 `;
 
 export const FormContainer = styled.div`
@@ -15,14 +16,18 @@ export const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   background: #fff;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.6);
   padding: 60px 40px;
+  border-radius: 10px;
+  margin-top:50px;
 
   h3 {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: ${props => props.theme.favColor};
+    color: #D31027;
+    /*color: ${props => props.theme.favColor};*/
+    
   }
 `;
 
@@ -39,6 +44,7 @@ export const FormButton = styled.button`
   background: linear-gradient(to right, #36D1DC, #5B86E5);
   /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
   transition: 400ms all;
+  box-shadow: 1px 2px 4px black;
 
   :hover {
     transform: translateY(-2px);

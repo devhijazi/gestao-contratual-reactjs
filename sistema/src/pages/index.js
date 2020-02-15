@@ -1,7 +1,8 @@
 import Home from './home';
-import DashBoard from './dashboard'
+import DashBoard from './dashboard';
+import Cadastro from './cadastro';
 
-export {Home,DashBoard};
+export {Home,DashBoard,Cadastro};
 
 
 /**

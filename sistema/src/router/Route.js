@@ -11,6 +11,8 @@ import Footer from "../components/Footer";
 const RouteWrapper = ({
   component: Component,
   privateRoute = false,
+  navbar = true,
+  footer = true,
   ...rest
 }) => {
   const autenticado = isAuthenticate();
@@ -23,9 +25,9 @@ const RouteWrapper = ({
       {...rest}
       render={props => (
         <div>
-          <Navbar />
+          {navbar ? <Navbar /> : null }
           <Component {...props} />
-          <Footer />
+          {footer ? <Footer /> : null }
         </div>
       )}
     />

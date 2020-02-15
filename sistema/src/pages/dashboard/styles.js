@@ -14,7 +14,8 @@ export const FormContainer = styled.div`
     h3{
       text-align:center;
       font-size:50px;
-      color: #7AA1D2
+      color: #7AA1D2;
+      text-shadow: 1px 2px 3px black;
     }
     h4{
       text-align:center;
@@ -27,14 +28,14 @@ export const FormContainer = styled.div`
 `;
 export const FormInput = styled.div`
   position:relative;
-  margin-top:20px;
+  margin-top:-2px;
 
   label,
   span.show{
     position:absolute;
     top:50%;
     transform: translateY(-50%);
-    font-family:'Courier New', Courier, monospace
+    font-family: Georgia, 'Times New Roman', Times, serif;
   
   }
   label{ 
@@ -57,14 +58,14 @@ export const FormInput = styled.div`
   }
 `;
 
-export const Input = styled.div`
+export const Input = styled.input`
   margin: 20px 0;
   height: 50px;
   width: 650px;
-  border: 1px solid blueviolet;
+  border: 1px solid #7AA1D2;
   font-size: 20px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: 400ms;
   color: #000;
   :focus{
@@ -77,7 +78,7 @@ export const Input = styled.div`
   :valid ~ label{
     transform: translateY(-45px);
     font-size: 15px;
-    color:#f5d20a;
+    color:#000000;
   }
 `;
 export const FormButton = styled.button`
@@ -91,10 +92,9 @@ export const FormButton = styled.button`
   padding: 10px 60px;
   border-radius: 10px;
   color: #fff;
+  box-shadow: 2px 2px 3px black;
   background: linear-gradient(to right, #add100, #7b920a);
-  transition: 400ms all;
-  
-  
+  transition: 600ms all;
   :hover {
     transform: translateY(10px);
   }

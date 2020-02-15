@@ -28,14 +28,14 @@ const HeaderComponent = props => {
         <Navigation>
           <nav>
             <ul>
-              <NavbarItem path="/">
-                <Link to="/">Cadastro</Link>
+              <NavbarItem path="/cadastro">
+                <Link to="/cadastro">Cadastro</Link>
               </NavbarItem>
               <NavbarItem path="/">
-                <Link to="/">Lista</Link>
+                <Link to="/list">Lista</Link>
               </NavbarItem>
               <NavbarItem path="/">
-                <Link to="/">Notificações</Link>
+                <Link to="/notifications">Notificações</Link>
               </NavbarItem>
             </ul>
           </nav>
