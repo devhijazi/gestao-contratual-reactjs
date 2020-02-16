@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+
+import { isAuthenticate } from "../../services/auth.js";
+import api from '../../services/api.js';
+
 
 import Logo from "../../assets/img/brasao.png";
 
@@ -14,6 +19,21 @@ import {
 } from "./styles";
 
 const HeaderComponent = props => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    async function getUser() {
+      const { user } = await api
+        .get("/user/admin", {
+          headers: { Authorization: localStorage.getItem("token") }
+        })
+        .then(r => r.data);
+
+      setUser(user);
+    }
+    if (isAuthenticate()) getUser();
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -36,12 +56,14 @@ const HeaderComponent = props => {
               </NavbarItem>
               <NavbarItem path="/">
                 <Link to="/notifications">Notificações</Link>
+
               </NavbarItem>
             </ul>
           </nav>
           <nav>
             <NavbarItem>
-              <Link to="/#">Conta</Link>
+              <ul>Logado: </ul>
+                <ul>{user ? user.name:'Não Logado'}</ul>
             </NavbarItem>
           </nav>
         </Navigation>

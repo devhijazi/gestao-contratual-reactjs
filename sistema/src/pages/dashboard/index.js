@@ -1,44 +1,16 @@
 import React from "react";
-import {
-  Container,
-  FormContainer,
-  FormInput,
-  Input,
-  FormButton,
-} from "./styles";
 
+
+import {Container,} from './styles';
 const dashBoardPage = ({}) => {
-  return (
-    <Container>
-      <FormContainer>
-        <h3>CADASTRO</h3>
-        <FormInput>
-          <Input type="text" name="name" />
-          <label>Nome/Fantasia</label>
-        </FormInput>
-        <FormInput>
-          <Input name="name" type="textarea" />
-          <label>Descrição Breve</label>
-        </FormInput>
-        <FormInput>
-          <Input name="date" type="date" />
-          <label>Data Inicio</label>
-        </FormInput>
-        <FormInput>
-          <Input name="date" type="date" />
-          <label>Data Término</label>
-        </FormInput>
-        <FormInput>
-          <Input name="text" type="textarea" />
-          <label>OBS:</label>
-        </FormInput>
-        <FormButton>CONCLUIR</FormButton>
-        <h4>
-          *Após a conclusão certifique-se que o popUp de cadastro realizado com
-          sucesso apareça.*
-        </h4>
-      </FormContainer>
-    </Container>
-  );
+    return(
+    
+        <Container>
+          <p>
+          Pellentesque laoreet purus nec egestas iaculis. Aenean blandit finibus felis, non placerat metus mattis eu. Nam in risus sit amet justo elementum lobortis non ut enim. Quisque sed consequat eros, non pulvinar metus. Nulla quis rutrum quam. Fusce id pretium magna. Etiam euismod lorem vel est porttitor, vel viverra libero sollicitudin. Fusce porta nisi sed posuere finibus. Morbi eu mollis urna, mollis auctor ante. Integer pellentesque nisi in libero viverra, sed sodales risus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In elit lectus, sagittis sed metus volutpat, condimentum pellentesque est. Nulla diam massa, luctus id leo eu, luctus elementum ipsum.
+          </p>
+        </Container>
+    
+    );
 };
 export default dashBoardPage;

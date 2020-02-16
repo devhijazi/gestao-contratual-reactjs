@@ -132,6 +132,11 @@ export const NavbarItem = styled.li`
       }
     }
   }
+  ul{
+    font-family: monospace;
+    color:white;
+    text-shadow: 1px 1px 3px black;
+  }
 `;
 
 
