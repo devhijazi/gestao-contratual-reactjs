@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
 import { isAuthenticate } from "../../services/auth.js";
-import api from '../../services/api.js';
-
-import userIcon from '../../assets/others/saida.png'
-
-
+import api from "../../services/api.js";
 import Logo from "../../assets/img/brasao.png";
 import {
   Container,
@@ -57,17 +52,13 @@ const HeaderComponent = props => {
               </NavbarItem>
               <NavbarItem path="/">
                 <Link to="/notifications">Notificações</Link>
-
               </NavbarItem>
             </ul>
           </nav>
           <nav>
-            <NavbarItem>
-                <ul>
-                 <LogoStyle src={userIcon}/>
-                  {user ? user.name:'Error'}
-                  </ul>
-            </NavbarItem>
+              <NavbarItem>
+                <ul>{user ? user.name : "Acessando..."}</ul>
+              </NavbarItem>
           </nav>
         </Navigation>
       </Header>

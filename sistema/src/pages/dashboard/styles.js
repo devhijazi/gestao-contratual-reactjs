@@ -7,10 +7,10 @@ export const Container = styled.div`
   justify-content: center;
   box-sizing: border-box;
  h1{
-   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    margin-top: 12px;
    font-size: 30px;
-   color: blueviolet;
+   color: whitesmoke;
+   text-shadow: 1px 2px 2px black;
  }
 `;
 

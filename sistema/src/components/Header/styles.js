@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import userIcon from '../../assets/others/user.png'
 
 export const Container = styled.div`
   user-select: none;
@@ -23,7 +24,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 0 100px;
   height: 40px; /*Largua da navbar*/
-  background: linear-gradient(#799F0C,#acbb78); /*Cor da background da navbar*/
+  background: linear-gradient(#373B44,#4286f4); /*Cor da background da navbar*/
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 500px) {
@@ -46,8 +47,8 @@ export const FixedItems = styled.div`
   }
 `;
 export const LogoStyle = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 `;
 
 
@@ -138,7 +139,9 @@ export const NavbarItem = styled.li`
   }
   ul{
     color:white;
+
   }
+  
 `;
 
 

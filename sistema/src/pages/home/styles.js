@@ -12,7 +12,6 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.div`
-@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,12 +27,7 @@ export const FormContainer = styled.div`
     font-weight: 700;
     margin-bottom: 20px;
     color: #D31027;
-    font-family: 'Saira Semi Condensed', sans-serif;
     /*color: ${props => props.theme.favColor};*/
-    
-  }
-  h6{
-    font-family: 'Saira Semi Condensed', sans-serif;
     
   }
 `;

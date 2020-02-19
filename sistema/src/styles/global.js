@@ -1,36 +1,53 @@
 import { createGlobalStyle } from 'styled-components';
-
+import bg from '../assets/others/wave.svg';
+import bgFooter from '../assets/others/wave_footer.svg';
 
 export default createGlobalStyle`
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans Narrow', sans-serif !important;
+  }
 
-}
-html{
-    background: linear-gradient( #FFEFBA,#FFFFFF);
-    scroll-behavior:smooth;
-}
-body,
+  html {
+    scroll-behavior: smooth;
+  }
 
-ul{
-    list-style-type:none;
-}
+  body {
+    font-family: 'PT Sans Narrow', sans-serif;
+   
+  }
 
-li{
-    list-style:none;
-}
+  ul {
+    list-style-type: none;
+  }
 
-a{
+  li {
+    list-style: none;
+  }
+
+  a {
     text-decoration: none;
-}
-.main-container {
-    display:flex;
+  }
+
+  #bgImageTop {
+    background-image: url(${bg});
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  #bgImage {
+    background-image: url(${bgFooter});
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .main-container {
+    display: flex;
     justify-content: space-between;
-    -ms-flex-pack:justify;
     min-height: 100vh;
-}
-`
+  }
+`;

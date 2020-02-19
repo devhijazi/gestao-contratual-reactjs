@@ -20,7 +20,6 @@ export const FormContainer = styled.div`
     h4{
       text-align:center;
       margin-top: 30px;
-      font-family: 'Times New Roman', Times, serif;
       font-size: 15px;
       color:#EA384D;
     }
