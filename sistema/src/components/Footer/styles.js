@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   user-select: none;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+  /*box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);*/
 
   div {
     align-items: center;
@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   width: 100%;
-  height: 20px;
+  height: 40px;
   background-color: darkblue;
 `;
 export const DeveloperContainer = styled.div`
@@ -26,7 +26,7 @@ export const DeveloperContainer = styled.div`
   font-size: 14px;
   font-weight: 300;
   color: #000;
-  background: linear-gradient(#373B44,#4286f4);
+  /*background: linear-gradient(#373B44,#4286f4);*/
 
   
 `;

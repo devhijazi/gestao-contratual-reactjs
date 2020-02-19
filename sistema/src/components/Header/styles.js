@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import userIcon from '../../assets/others/user.png'
+
 
 export const Container = styled.div`
   user-select: none;
@@ -23,10 +23,10 @@ export const Header = styled.header`
   z-index: 1;
   align-items: center;
   padding: 0 100px;
-  height: 40px; /*Largua da navbar*/
-  background: linear-gradient(#373B44,#4286f4); /*Cor da background da navbar*/
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
-
+  height: 60px; /*Largua da navbar*/
+   /*Cor da background da navbar*/
+  /*background: linear-gradient(#373B44,#4286f4);*/
+  /* box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);*/
   @media (max-width: 500px) {
     position: fixed;
     width: 100%;
@@ -143,8 +143,71 @@ export const NavbarItem = styled.li`
   }
   
 `;
-
-
+export const Dropdown = styled.li`
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  button:first-child {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: whitesmoke;
+    font-weight: 600;
+  }
+  button:first-child img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  button:first-child span {
+    margin-left: 5px;
+  }
+  @media (max-width: 900px) {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    button {
+      padding: 20px 0;
+    }
+  }
+`;
+export const DropdownItems = styled.div`
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  
+  button {
+    border: none;
+    background: none;
+  }
+  a,
+  button {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+    color: black;
+  }
+  a:hover,
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  @media (max-width: 900px) {
+    position: relative;
+    background: none;
+    box-shadow: none;
+    margin-top: 0;
+    a,
+    button {
+      padding: 10px 0;
+      color: #fff;
+    }
+  }
+`;
 export const ResponsiveContainer = styled.div`
   display: none;
   align-items: center;

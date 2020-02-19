@@ -7,10 +7,10 @@ export const Container = styled.div`
   justify-content: center;
   box-sizing: border-box;
  h1{
-   margin-top: 12px;
+   margin-top: 10%;
    font-size: 30px;
-   color: whitesmoke;
-   text-shadow: 1px 2px 2px black;
+   color: #7AA1D2;
+   text-shadow: 1px 1px 2px black;
  }
 `;
 
