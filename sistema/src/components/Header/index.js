@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import { isAuthenticate } from "../../services/auth.js";
 import api from '../../services/api.js';
 
+import userIcon from '../../assets/others/saida.png'
+
 
 import Logo from "../../assets/img/brasao.png";
-
 import {
   Container,
   Header,
@@ -62,8 +63,10 @@ const HeaderComponent = props => {
           </nav>
           <nav>
             <NavbarItem>
-              <ul>Logado: </ul>
-                <ul>{user ? user.name:'Não Logado'}</ul>
+                <ul>
+                 <LogoStyle src={userIcon}/>
+                  {user ? user.name:'Error'}
+                  </ul>
             </NavbarItem>
           </nav>
         </Navigation>

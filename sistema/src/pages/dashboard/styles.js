@@ -6,11 +6,13 @@ export const Container = styled.div`
   height: 100vh;
   justify-content: center;
   box-sizing: border-box;
-  p{
-    text-align:center;
-    margin:auto;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    text-shadow: 1px 1px 3px black;
-  }
+ h1{
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   margin-top: 12px;
+   font-size: 30px;
+   color: blueviolet;
+ }
 `;
+
+
+

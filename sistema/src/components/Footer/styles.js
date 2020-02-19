@@ -26,7 +26,7 @@ export const DeveloperContainer = styled.div`
   font-size: 14px;
   font-weight: 300;
   color: #000;
-  background: linear-gradient(#7474bf,#348ac7);
+  background: linear-gradient(#799F0C,#acbb78);
 
   
 `;

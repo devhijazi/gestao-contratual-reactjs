@@ -21,10 +21,13 @@ const HomePage = ({ history }) => {
         .get(`/auth?${params.toString()}`)
         .then(r => r.data);
       localStorage.setItem("token", token);
+
       const { user } = await api
-        .get(`/auth?${params.toString()}`)
+        .get("user/admin", {
+          headers: { Authorization: token }
+        })
         .then(r => r.data);
-      localStorage.setItem("user", user);
+      localStorage.setItem("user", user.name);
       return history.push("/dashboard");
     } catch (e) {}
   };
@@ -34,7 +37,6 @@ const HomePage = ({ history }) => {
   };
 
   const handlePassword = () => setPasswordShowing(!passwordShowing);
-
 
   return (
     <Container>

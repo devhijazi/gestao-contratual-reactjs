@@ -23,7 +23,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 0 100px;
   height: 40px; /*Largua da navbar*/
-  background: linear-gradient(#7474bf,#348ac7); /*Cor da background da navbar*/
+  background: linear-gradient(#799F0C,#acbb78); /*Cor da background da navbar*/
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 500px) {
@@ -46,9 +46,11 @@ export const FixedItems = styled.div`
   }
 `;
 export const LogoStyle = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 `;
+
+
 export const Navigation = styled.div`
   display: flex;
   width: 100%;
@@ -135,9 +137,7 @@ export const NavbarItem = styled.li`
     }
   }
   ul{
-    font-family: monospace;
     color:white;
-    text-shadow: 1px 1px 3px black;
   }
 `;
 
@@ -151,5 +151,4 @@ export const ResponsiveContainer = styled.div`
     display: flex;
   }
 `;
-
 

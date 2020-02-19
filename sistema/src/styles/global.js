@@ -2,16 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swapp');
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Bebas Neue';
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 
 }
 html{
-    background: #e8e8e8;
+    background: linear-gradient( #FFEFBA,#FFFFFF);
     scroll-behavior:smooth;
 }
 body,

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-
+import React from "react";
 import { Container } from "./styles";
 
+
 const dashBoardPage = ({ history }) => {
-  
+  var x = localStorage.getItem("user");
+
   return (
     <Container>
-      <p>Olá</p>
+      <h1>Bem vindo(a) {x}</h1>
+
     </Container>
   );
 };
