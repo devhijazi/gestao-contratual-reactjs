@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
   display: flex;
   width: 100%;
@@ -11,6 +12,7 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.div`
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap');
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +28,12 @@ export const FormContainer = styled.div`
     font-weight: 700;
     margin-bottom: 20px;
     color: #D31027;
+    font-family: 'Saira Semi Condensed', sans-serif;
     /*color: ${props => props.theme.favColor};*/
+    
+  }
+  h6{
+    font-family: 'Saira Semi Condensed', sans-serif;
     
   }
 `;
@@ -41,11 +48,10 @@ export const FormButton = styled.button`
   padding: 10px 60px;
   border-radius: 10px;
   color: #fff;
-  background: linear-gradient(to right, #36D1DC, #5B86E5);
+  background: linear-gradient(to right, #1D4350, #A43931);
   /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
   transition: 400ms all;
   box-shadow: 1px 2px 4px black;
-
   :hover {
     transform: translateY(-2px);
   }
@@ -93,7 +99,7 @@ export const Input = styled.input`
   color: #000;
 
   :focus {
-    border: 1px solid #1da1f2;
+    border: 1px solid #a10d14;
   }
 
   :valid ~ span.show {
@@ -104,6 +110,6 @@ export const Input = styled.input`
   :valid ~ label {
     transform: translateY(-45px);
     font-size: 16px;
-    color: #1da1f2;
+    color: #ff9305;
   }
 `;

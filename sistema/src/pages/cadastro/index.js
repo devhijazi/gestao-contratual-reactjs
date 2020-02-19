@@ -7,7 +7,7 @@ import {
   FormButton
 } from "./styles";
 
-const cadastroPage = ({}) => {
+const cadastroPage = ({history}) => {
   return (
     <Container>
       <FormContainer>

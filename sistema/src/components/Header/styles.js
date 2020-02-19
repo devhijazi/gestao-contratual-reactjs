@@ -98,6 +98,7 @@ export const NavbarItem = styled.li`
     font-weight: 500;
     text-transform: uppercase;
     transition: opacity 300ms;
+  
   }
   @media (min-width: 900px) {
     a {
@@ -116,6 +117,7 @@ export const NavbarItem = styled.li`
       background: #fff;
       height: 2px;
       transition: width 300ms;
+    
     }
     a:hover {
       opacity: 1;

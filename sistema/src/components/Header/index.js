@@ -51,8 +51,8 @@ const HeaderComponent = props => {
               <NavbarItem path="/cadastro">
                 <Link to="/cadastro">Cadastro</Link>
               </NavbarItem>
-              <NavbarItem path="/">
-                <Link to="/list">Lista</Link>
+              <NavbarItem path="/lista">
+                <Link to="/lista">Lista</Link>
               </NavbarItem>
               <NavbarItem path="/">
                 <Link to="/notifications">Notificações</Link>
