@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   user-select: none;
 
@@ -24,7 +23,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 0 100px;
   height: 60px; /*Largua da navbar*/
-   /*Cor da background da navbar*/
+  /*Cor da background da navbar*/
   /*background: linear-gradient(#373B44,#4286f4);*/
   /* box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);*/
   @media (max-width: 500px) {
@@ -50,7 +49,6 @@ export const LogoStyle = styled.img`
   width: 40px;
   height: 40px;
 `;
-
 
 export const Navigation = styled.div`
   display: flex;
@@ -83,15 +81,15 @@ export const Navigation = styled.div`
     margin: 0 !important;
     padding: 0 !important;
   }
-  ul{
-    width: 100%
+  ul {
+    width: 100%;
   }
-  li{
-    display:flex;
+  li {
+    display: flex;
     justify-content: center;
-    margin: 10px !important
+    margin: 10px !important;
   }
-  nav{
+  nav {
     flex-direction: inline;
   }
 `;
@@ -101,7 +99,6 @@ export const NavbarItem = styled.li`
     font-weight: 500;
     text-transform: uppercase;
     transition: opacity 300ms;
-  
   }
   @media (min-width: 900px) {
     a {
@@ -120,7 +117,6 @@ export const NavbarItem = styled.li`
       background: #fff;
       height: 2px;
       transition: width 300ms;
-    
     }
     a:hover {
       opacity: 1;
@@ -137,21 +133,19 @@ export const NavbarItem = styled.li`
       }
     }
   }
-  ul{
-    color:white;
-
+  ul {
   }
-  
 `;
 export const Dropdown = styled.li`
   position: relative;
   z-index: 5;
   width: 100%;
+
   button:first-child {
     cursor: pointer;
     background: none;
     border: none;
-    color: whitesmoke;
+    color: white;
     font-weight: 600;
   }
   button:first-child img {
@@ -180,7 +174,8 @@ export const DropdownItems = styled.div`
   background-color: #f9f9f9;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  
+  display: ${props => (props.open ? "flex" : "none")};
+
   button {
     border: none;
     background: none;
@@ -190,11 +185,11 @@ export const DropdownItems = styled.div`
     cursor: pointer;
     text-align: center;
     padding: 10px 0;
-    color: black;
+    color: white;
   }
   a:hover,
   button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.5);
   }
   @media (max-width: 900px) {
     position: relative;
@@ -204,7 +199,8 @@ export const DropdownItems = styled.div`
     a,
     button {
       padding: 10px 0;
-      color: #fff;
+      color: black;
+      text-align: center;
     }
   }
 `;
@@ -217,4 +213,3 @@ export const ResponsiveContainer = styled.div`
     display: flex;
   }
 `;
-

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
-import { signOut } from '../../store/reducers/AuthReducer/actions.js';
+import { signOut } from "../../store/reducers/AuthReducer/actions.js";
 
 import { isAuthenticate } from "../../services/auth.js";
 import api from "../../services/api.js";
@@ -21,7 +20,6 @@ import {
 } from "./styles";
 
 const HeaderComponent = props => {
-
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -35,7 +33,7 @@ const HeaderComponent = props => {
     handleClick();
   };
 
-  const handleLogout = () => (signOut());
+  const handleLogout = () => signOut();
 
   useEffect(() => {
     async function getUser() {
@@ -82,9 +80,8 @@ const HeaderComponent = props => {
                   <span>{user ? user.name : "Acessando..."}</span>
                 </button>
                 <DropdownItems open={dropdownOpen} onClick={handleClickItem}>
-                  <Link to="/dashboard">Inicio</Link>
                   <button type="button" onClick={handleLogout}>
-                    Sair.
+                    SAIR
                   </button>
                 </DropdownItems>
               </NavbarItem>
