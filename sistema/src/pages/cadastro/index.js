@@ -8,6 +8,10 @@ import {
 } from "./styles";
 
 const cadastroPage = ({history}) => {
+
+ window.alert(`
+ Sistema de cadastro indisponível no momento
+ Pressione 'OK' para visualizar a pagina.`);
   return (
     <Container>
       <FormContainer>
@@ -32,7 +36,11 @@ const cadastroPage = ({history}) => {
           <Input name="text" type="textarea" />
           <label>OBS:</label>
         </FormInput>
-        <FormButton>CONCLUIR</FormButton>
+        <FormButton>
+
+          CONCLUIR
+         
+        </FormButton>
         <h4>
           *Após a conclusão certifique-se que o popUp de cadastro realizado com
           sucesso apareça.*

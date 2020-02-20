@@ -14,14 +14,14 @@ export const FormContainer = styled.div`
     h3{
       text-align:center;
       font-size:50px;
-      color: #7AA1D2;
+      color: #8E54E9;
       text-shadow: 1px 2px 3px black;
     }
     h4{
       text-align:center;
       margin-top: 30px;
       font-size: 15px;
-      color:#EA384D;
+      color:#ffffff;
     }
   
 `;
@@ -93,8 +93,9 @@ export const FormButton = styled.button`
   color: #fff;
   box-shadow: 2px 2px 3px black;
   background: linear-gradient(to right, #add100, #7b920a);
-  transition: 600ms all;
+  transition: 800ms all;
   :hover {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
+  
 `;

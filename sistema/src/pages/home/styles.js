@@ -25,9 +25,21 @@ export const FormContainer = styled.div`
   h3 {
     font-size: 36px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #D31027;
     /*color: ${props => props.theme.favColor};*/
+    
+  }
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  
+  #forgotPassword{
+    color: #408eed;
+    margin-top: 10px;
+    align-items:center;
+    justify-content:center;
     
   }
 `;
@@ -42,7 +54,7 @@ export const FormButton = styled.button`
   padding: 10px 60px;
   border-radius: 10px;
   color: #fff;
-  background: linear-gradient(to right, #1D4350, #A43931);
+  background: #0099ff;
   /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
   transition: 400ms all;
   box-shadow: 1px 2px 4px black;
@@ -93,7 +105,7 @@ export const Input = styled.input`
   color: #000;
 
   :focus {
-    border: 1px solid #a10d14;
+    border: 1px solid  #0099ff;
   }
 
   :valid ~ span.show {
@@ -104,6 +116,6 @@ export const Input = styled.input`
   :valid ~ label {
     transform: translateY(-45px);
     font-size: 16px;
-    color: #ff9305;
+    color:  #0099ff;
   }
 `;

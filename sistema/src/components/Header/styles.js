@@ -140,13 +140,13 @@ export const Dropdown = styled.li`
   position: relative;
   z-index: 5;
   width: 100%;
-
   button:first-child {
     cursor: pointer;
     background: none;
     border: none;
-    color: white;
+    color: black;
     font-weight: 600;
+   
   }
   button:first-child img {
     width: 30px;
@@ -154,14 +154,14 @@ export const Dropdown = styled.li`
     border-radius: 50%;
   }
   button:first-child span {
-    margin-left: 5px;
+    margin-left: 10px;
   }
   @media (max-width: 900px) {
     display: flex;
     width: 100%;
     flex-direction: column;
     button {
-      padding: 20px 0;
+      padding: 20px 10px;
     }
   }
 `;
@@ -170,12 +170,11 @@ export const DropdownItems = styled.div`
   z-index: 1;
   width: 100%;
   flex-direction: column;
-  margin-top: 16px;
+  margin-top: 20px;
   background-color: #f9f9f9;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0  3px 1px rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   display: ${props => (props.open ? "flex" : "none")};
-
   button {
     border: none;
     background: none;
@@ -185,7 +184,8 @@ export const DropdownItems = styled.div`
     cursor: pointer;
     text-align: center;
     padding: 10px 0;
-    color: white;
+    color: black;
+    font-weight: 600;
   }
   a:hover,
   button:hover {

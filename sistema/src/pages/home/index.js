@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import api from "../../services/api.js";
+import { Link } from "react-router-dom";
+
+import icon from "../../assets/others/trava.png";
 import {
   Container,
   FormContainer,
@@ -42,7 +45,8 @@ const HomePage = ({ history }) => {
     <Container>
       <form onSubmit={handleSubmit} onChange={setData}>
         <FormContainer>
-          <h3>ACESSO RESTRITO</h3>
+          <img src={icon} alt="Logo" />
+          <h3> ACESSO RESTRITO </h3>
           <h6>Somente usuários cadastrados no banco de dados.</h6>
           <FormInput>
             <Input name="email" type="text" required />
@@ -60,6 +64,9 @@ const HomePage = ({ history }) => {
             <label>Senha</label>
           </FormInput>
           <FormButton>ENTRAR</FormButton>
+          <Link to="/notfound" id="forgotPassword">
+            Esqueceu sua senha ? Recupere aqui
+          </Link>
         </FormContainer>
       </form>
     </Container>

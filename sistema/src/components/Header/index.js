@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { signOut } from "../../store/reducers/AuthReducer/actions.js";
-
 import { isAuthenticate } from "../../services/auth.js";
 import api from "../../services/api.js";
 import Logo from "../../assets/img/brasao.png";
+
+/*import history from "../../services/history";*/
 
 import {
   Container,
@@ -19,21 +19,10 @@ import {
   DropdownItems
 } from "./styles";
 
-const HeaderComponent = props => {
+const HeaderComponent = ({ props }) => {
   const [user, setUser] = useState(null);
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const [navbarOpen, setNavbarOpen] = useState(false);
-
-  const navbarToggle = () => setNavbarOpen(!navbarOpen);
-
-  const handleClick = () => setDropdownOpen(!dropdownOpen);
-  const handleClickItem = () => {
-    navbarToggle();
-    handleClick();
-  };
-
-  const handleLogout = () => signOut();
 
   useEffect(() => {
     async function getUser() {
@@ -48,6 +37,16 @@ const HeaderComponent = props => {
     if (isAuthenticate()) getUser();
   }, []);
 
+  const handleClick = () => setDropdownOpen(!dropdownOpen);
+  const handleClickItem = () => {
+    handleClick();
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    window.location.reload('/')
+  };
   return (
     <Container>
       <Header>
@@ -77,11 +76,12 @@ const HeaderComponent = props => {
             <Dropdown>
               <NavbarItem>
                 <button type="button" onClick={handleClick}>
-                  <span>{user ? user.name : "Acessando..."}</span>
+                  <a>{user ? user.name : "Acessando..."}</a>
                 </button>
                 <DropdownItems open={dropdownOpen} onClick={handleClickItem}>
+                <button type="button">Configuração</button>
                   <button type="button" onClick={handleLogout}>
-                    SAIR
+                    Encerrar.
                   </button>
                 </DropdownItems>
               </NavbarItem>
