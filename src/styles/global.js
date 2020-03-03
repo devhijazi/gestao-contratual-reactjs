@@ -35,6 +35,7 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
   }
+
   #bgImageTop {
     background-image: url(${bg});
     background-repeat: no-repeat;
@@ -46,9 +47,12 @@ export default createGlobalStyle`
     background-repeat: no-repeat;
     background-position: bottom;
   }
+
   .main-container {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
     min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
   }
 `;

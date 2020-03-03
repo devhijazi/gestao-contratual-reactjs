@@ -1,19 +1,38 @@
 import jwt from "jsonwebtoken";
 
-const token = () => localStorage.getItem("token");
+const token = () => sessionStorage.getItem("@token");
 
-export function isAuthenticate() {
-  const getToken = token();
-  if (!token) return false;
-
+export function verify(token) {
   try {
-    jwt.verify(getToken, process.env.REACT_APP_JWT_TOKEN);
+    jwt.verify(token, process.env.REACT_APP_JWT_TOKEN);
     return true;
   } catch (e) {
     return false;
   }
 }
 
-export function authenticate() {}
+export function isAuthenticated() {
+  const localToken = token();
+  if (!localToken) return false;
 
-export function logout() {}
+  return verify(localToken);
+}
+
+export async function authenticate(token) {
+  if (!token || !verify(token)) throw new Error("Invalid Token Provided!");
+  return sessionStorage.setItem("@token", token);
+}
+
+export function logout() {
+  return sessionStorage.removeItem("@token");
+}
+
+// User
+
+export async function setUser(user) {
+  return localStorage.setItem("@user", JSON.stringify(user));
+}
+
+export function getUser() {
+  return JSON.parse(localStorage.getItem("@user"));
+}

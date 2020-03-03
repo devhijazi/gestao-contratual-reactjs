@@ -1,11 +1,8 @@
-import styled from 'styled-components';
-
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
-  height: 100vh;
-  padding: 20px 0;
+
   justify-content: center;
   align-items: center;
   background-color:#ced2d6;
@@ -17,9 +14,10 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 60px 40px;
+  margin-top:50px;
   background: #fff;
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.6);
-  padding: 60px 40px;
   border-radius: 10px;
   margin-top:5px;
 
@@ -31,12 +29,41 @@ export const FormContainer = styled.div`
     /*color: ${props => props.theme.favColor};*/
     
   }
-  img{
+  
+  img {
     width: 40px;
     height: 40px;
   }
+
+  input {
+    margin: 25px 0;
+    height: 50px;
+    width: 400px;
+    border: 1px solid silver;
+    outline: none;
+    font-size: 14px;
+    padding-left: 15px;
+    border-radius: 5px;
+    transition: 400ms;
+    color: #000;
+
+    :focus {
+      border: 1px solid  #0099ff;
+    }
+
+    :valid ~ span.show {
+      visibility: visible;
+    }
+
+    :focus ~ label,
+    :valid ~ label {
+      transform: translateY(-45px);
+      font-size: 16px;
+      color:  #0099ff;
+    }
+  }
   
-  #forgotPassword{
+  #forgotPassword {
     color: #408eed;
     margin-top: 10px;
     align-items:center;

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import api from "../../services/api.js";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
@@ -11,39 +10,34 @@ import {
 } from "./styles";
 
 const HomePage = ({ history }) => {
-  const [formData, setFormData] = useState({});
   const [passwordShowing, setPasswordShowing] = useState(false);
 
-  const handleSubmit = async e => {
-    e.preventDefault();
+  function handlePassword() {
+    setPasswordShowing(!passwordShowing);
+  }
 
-    const params = new URLSearchParams(formData);
+  async function handleSubmit(data) {
     try {
-      const { token } = await api
-        .get(`/auth?${params.toString()}`)
-        .then(r => r.data);
-      localStorage.setItem("token", token);
+      const validateData = await Schema.validate(data);
+      const dataParams = new URLSearchParams(validateData).toString();
 
-      const { user } = await api
-        .get("user/admin", {
-          headers: { Authorization: token }
-        })
+      const { token, user } = await api
+        .get(`/auth?${dataParams}`)
         .then(r => r.data);
-      localStorage.setItem("user", user.name);
-      return history.push("/dashboard");
-    } catch (e) {}
-  };
-  const notify = () => toast.success(`Logado com sucesso`);
-
-  const setData = e => {
-    return setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  
-  const handlePassword = () => setPasswordShowing(!passwordShowing);
+      await authenticate(token).catch(() => window.location.reload());
+      return setUser(user).then(() => history.push("/dashboard"));
+    } catch (e) {
+      const ValidationError = e instanceof Yup.ValidationError;
+      const error = ValidationError
+        ? `${capitalize(e.path)}: ${e.message}`
+        : e.response.data.error;
+      toast.error(error || "Reveja suas informações!");
+    }
+  }
 
   return (
     <Container>
-      <form onSubmit={handleSubmit} onChange={setData}>
+      <Form onSubmit={handleSubmit}>
         <FormContainer>
           <h3> LOGIN </h3>
           <h6>Olá usuário</h6>
@@ -67,7 +61,7 @@ const HomePage = ({ history }) => {
             Esqueceu sua senha ? Recupere aqui
           </Link>
         </FormContainer>
-      </form>
+      </Form>
     </Container>
   );
 };

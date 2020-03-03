@@ -10,9 +10,11 @@ const App = () => (
   <div>
     <div id="bgImageTop">
       <div id="bgImage">
-        <Routes />
-        <GlobalStyle />
-        <ToastContainer position="top-right" autoClose={1500} />
+        <section className="main-container">
+          <Routes />
+          <GlobalStyle />
+          <ToastContainer position="top-right" autoClose={1500} />
+        </section>
       </div>
     </div>
   </div>

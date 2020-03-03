@@ -45,6 +45,7 @@ export const FixedItems = styled.div`
     justify-content: space-between;
   }
 `;
+
 export const LogoStyle = styled.img`
   width: 40px;
   height: 40px;
@@ -93,6 +94,7 @@ export const Navigation = styled.div`
     flex-direction: inline;
   }
 `;
+
 export const NavbarItem = styled.li`
   a {
     color: whitesmoke;
@@ -136,44 +138,52 @@ export const NavbarItem = styled.li`
   ul {
   }
 `;
+
 export const Dropdown = styled.li`
   position: relative;
   z-index: 5;
   width: 100%;
+
   button:first-child {
     cursor: pointer;
     background: none;
     border: none;
-    color: black;
+    color: #000;
     font-weight: 600;
   }
+
   button:first-child img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
   }
+
   button:first-child span {
-    margin-left: 10px;
+    margin-left: 5px;
   }
+
   @media (max-width: 900px) {
     display: flex;
     width: 100%;
     flex-direction: column;
+
     button {
-      padding: 20px 10px;
+      padding: 20px 0;
     }
   }
 `;
+
 export const DropdownItems = styled.div`
   position: absolute;
   z-index: 1;
   width: 100%;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 16px;
   background-color: #f9f9f9;
-  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  display: ${props => (props.open ? "flex" : "none")};
+  display: ${props => (props.open ? 'flex' : 'none')};
+
   button {
     border: none;
     background: none;
@@ -183,12 +193,11 @@ export const DropdownItems = styled.div`
     cursor: pointer;
     text-align: center;
     padding: 10px 0;
-    color: black;
-    font-weight: 600;
+    color: #000;
   }
   a:hover,
   button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.05);
   }
   @media (max-width: 900px) {
     position: relative;
@@ -198,11 +207,12 @@ export const DropdownItems = styled.div`
     a,
     button {
       padding: 10px 0;
-      color: black;
-      text-align: center;
+      color: #fff;
     }
   }
 `;
+
+
 export const ResponsiveContainer = styled.div`
   display: none;
   align-items: center;
