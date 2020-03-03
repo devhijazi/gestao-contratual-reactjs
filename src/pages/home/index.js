@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import api from "../../services/api.js";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import icon from "../../assets/others/trava.png";
 import {
   Container,
   FormContainer,
@@ -46,9 +45,8 @@ const HomePage = ({ history }) => {
     <Container>
       <form onSubmit={handleSubmit} onChange={setData}>
         <FormContainer>
-          <img src={icon} alt="Logo" />
-          <h3> ACESSO RESTRITO </h3>
-          <h6>Somente usuários cadastrados no banco de dados.</h6>
+          <h3> LOGIN </h3>
+          <h6>Olá usuário</h6>
           <FormInput>
             <Input name="email" type="text" required />
             <label>Email</label>
@@ -64,7 +62,7 @@ const HomePage = ({ history }) => {
             </span>
             <label>Senha</label>
           </FormInput>
-          <FormButton onClick={notify}>ENTRAR</FormButton>
+          <FormButton onClick={notify}>LOGIN</FormButton>
           <Link to="/notfound" id="forgotPassword">
             Esqueceu sua senha ? Recupere aqui
           </Link>
