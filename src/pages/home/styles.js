@@ -5,8 +5,6 @@ export const Container = styled.div`
 
   justify-content: center;
   align-items: center;
-  background-color:#ced2d6;
-
 `;
 
 export const FormContainer = styled.div`
@@ -19,13 +17,12 @@ export const FormContainer = styled.div`
   background: #fff;
   box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  margin-top:5px;
 
   h3 {
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: black;
+    color: #D31027;
     /*color: ${props => props.theme.favColor};*/
     
   }
@@ -82,7 +79,7 @@ export const FormButton = styled.button`
   padding: 10px 60px;
   border-radius: 10px;
   color: #fff;
-  background: black;
+  background: #0099ff;
   /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
   transition: 400ms all;
   box-shadow: 1px 2px 4px black;
@@ -117,35 +114,5 @@ export const FormInput = styled.div`
     font-size: 14px;
     font-weight: bold;
     visibility: hidden;
-  }
-`;
-
-export const Input = styled.input`
-  margin: 25px 0;
-  height: 50px;
-  width: 400px;
-  border: 1px solid silver;
-  outline: none;
-  font-size: 14px;
-  padding-left: 15px;
-  border-radius: 5px;
-  transition: 400ms;
-  color: #000;
-
-  :focus {
-    border: 1px solid  #0099ff;
-  }
-
-  :valid ~ span.show {
-    visibility: visible;
-  }
-
-  :focus ~ label,
-  :valid ~ label {
-    transform: translateY(-45px);
-    font-size: 16px;
-    color:  black;
-    font-weight: bold;
-    
   }
 `;

@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import {
-  Container,
-  FormContainer,
-  FormButton,
-  FormInput,
-  Input
-} from "./styles";
+
+import { Form, Input } from "@rocketseat/unform";
+import * as Yup from "yup";
+
+import api from "../../services/api";
+import { authenticate, setUser } from "../../services/auth";
+
+import icon from "../../assets/others/trava.png";
+
+import { Container, FormContainer, FormButton, FormInput } from "./styles";
+
+const Schema = Yup.object().shape({
+  password: Yup.string().required("Senha obrigatória!"),
+  email: Yup.string()
+    .email()
+    .required("Insira o email!")
+});
+
+const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
 const HomePage = ({ history }) => {
   const [passwordShowing, setPasswordShowing] = useState(false);
@@ -39,8 +51,9 @@ const HomePage = ({ history }) => {
     <Container>
       <Form onSubmit={handleSubmit}>
         <FormContainer>
-          <h3> LOGIN </h3>
-          <h6>Olá usuário</h6>
+          <img src={icon} alt="Logo" />
+          <h3> ACESSO RESTRITO </h3>
+          <h6>Somente usuários cadastrados no banco de dados.</h6>
           <FormInput>
             <Input name="email" type="text" required />
             <label>Email</label>
@@ -56,7 +69,7 @@ const HomePage = ({ history }) => {
             </span>
             <label>Senha</label>
           </FormInput>
-          <FormButton onClick={notify}>LOGIN</FormButton>
+          <FormButton type="submit">ENTRAR</FormButton>
           <Link to="/notfound" id="forgotPassword">
             Esqueceu sua senha ? Recupere aqui
           </Link>

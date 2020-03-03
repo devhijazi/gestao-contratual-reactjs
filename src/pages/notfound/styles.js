@@ -7,7 +7,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: whitesmoke;
 
   & * {
     text-align: center;
@@ -18,7 +17,7 @@ export const Container = styled.div`
   h1 {
     font-size: 160px;
     font-weight: 900;
-    color: black;
+    color: #3a7bd5;
     font-style: italic !important;
   }
   h2 {
@@ -26,10 +25,11 @@ export const Container = styled.div`
     position: relative;
     font-size: 30px;
     font-weight: 900;
+    font-style: italic;
     padding: 25px 0;
     border-radius: 5px;
     color: black;
-    border: 0.5px solid;
+    border: 2px solid;
   }
   h2 span {
     position: absolute;

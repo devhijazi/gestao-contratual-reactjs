@@ -47,20 +47,6 @@ const HeaderComponent = () => {
   }, []);
 
   const handleClick = () => setDropdownOpen(!dropdownOpen);
-  const handleClickItem = () => {
-    handleClick();
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    window.location.reload("/");
-  };
-
-
-  const warnNotify = () => {
-    toast.error(`Olá o sistema de cadastro está Offline.`, {});
-  };
 
   return (
     <Container>
@@ -88,19 +74,15 @@ const HeaderComponent = () => {
             </ul>
           </nav>
           <nav>
-            <Dropdown>
-              <NavbarItem>
-                <button type="button" onClick={handleClick}>
-                  <a>{user ? user.name : "Logando.."}</a>
-                </button>
-                <DropdownItems open={dropdownOpen} onClick={handleClickItem}>
-                  <button type="button">Configuração</button>
-                  <button type="button" onClick={handleLogout}>
-                    Encerrar.
-                  </button>
-                </DropdownItems>
-              </NavbarItem>
-            </Dropdown>
+            {loading ? (
+              "Loading..."
+            ) : (
+              <UserContainer
+                user={user}
+                handleClick={handleClick}
+                dropdownOpen={dropdownOpen}
+              />
+            )}
           </nav>
         </Navigation>
       </Header>

@@ -18,10 +18,9 @@ const NotFoundPage = ({ history }) => {
           onClick={handleClick}
           role="presentation"
         >
-          <span>Erro</span>
+          <span>Nada Encontrado</span>
           <span>Voltar Inicio</span>
         </h2>
-        <h5>Algo inexperado aconteceu, clique no botão para voltar o inicio</h5>
       </div>
     </Container>
   );
