@@ -6,7 +6,6 @@ import api from "../../services/api.js";
 import Logo from "../../assets/img/brasao.png";
 import { toast } from "react-toastify";
 
-
 /*import history from "../../services/history";*/
 
 import {
@@ -52,11 +51,9 @@ const HeaderComponent = ({ props }) => {
 
   var x = localStorage.getItem("user");
 
-  const warnNotify = () =>{
-    toast.error(`Olá, ${x} o sistema de cadastro está Offline.`,{
-    })
-    
-  }
+  const warnNotify = () => {
+    toast.error(`Olá, ${x} o sistema de cadastro está Offline.`, {});
+  };
 
   return (
     <Container>
@@ -73,7 +70,9 @@ const HeaderComponent = ({ props }) => {
           <nav>
             <ul>
               <NavbarItem path="/cadastro">
-                <Link onClick={warnNotify}to="/cadastro">Cadastro</Link>
+                <Link onClick={warnNotify} to="/cadastro">
+                  Cadastro
+                </Link>
               </NavbarItem>
               <NavbarItem path="/lista">
                 <Link to="/lista">Lista</Link>
@@ -91,10 +90,7 @@ const HeaderComponent = ({ props }) => {
                 </button>
                 <DropdownItems open={dropdownOpen} onClick={handleClickItem}>
                   <button type="button">Configuração</button>
-                  <button
-                    type="button"
-                    onClick={handleLogout}
-                  >
+                  <button type="button" onClick={handleLogout}>
                     Encerrar.
                   </button>
                 </DropdownItems>
