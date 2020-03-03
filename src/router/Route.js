@@ -25,9 +25,9 @@ const RouteWrapper = ({
       {...rest}
       render={props => (
         <div>
-          {navbar ? <Navbar /> : null }
+          {navbar ? <Navbar /> : null}
           <Component {...props} />
-          {footer ? <Footer /> : null }
+          {footer ? <Footer /> : null}
         </div>
       )}
     />

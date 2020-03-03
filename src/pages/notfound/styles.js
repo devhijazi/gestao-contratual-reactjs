@@ -1,26 +1,26 @@
 import styled from "styled-components";
+
 export const Container = styled.div`
-    position:relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items:center;
-    justify-content:center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    & * {
-        text-align:center;
-    }
-    div{
-        margin: 20px 0;
-    }
-    h1{
-        font-size: 160px;
-        font-weight: 900;
-        color: #3a7bd5;
-        font-style: italic !important;
-
-    }
-    h2 {
+  & * {
+    text-align: center;
+  }
+  div {
+    margin: 20px 0;
+  }
+  h1 {
+    font-size: 160px;
+    font-weight: 900;
+    color: #3a7bd5;
+    font-style: italic !important;
+  }
+  h2 {
     cursor: pointer;
     position: relative;
     font-size: 30px;
@@ -42,7 +42,7 @@ export const Container = styled.div`
     opacity: ${props => (props.show ? 0 : 1)};
   }
   h2 span:last-child {
-    left: ${props => (props.show ? '0%' : '20%')};
+    left: ${props => (props.show ? "0%" : "20%")};
     opacity: ${props => (props.show ? 1 : 0)};
     color: black;
   }

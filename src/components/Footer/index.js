@@ -1,10 +1,6 @@
 import React from "react";
 
-import {
-  Container,
-  DeveloperContainer,
-  DeveloperContent
-} from "./styles";
+import { Container, DeveloperContainer, DeveloperContent } from "./styles";
 
 const FooterComponent = () => {
   return (
@@ -17,7 +13,7 @@ const FooterComponent = () => {
             rel="noopener noreferrer"
             href="http://www.campogrande.ms.gov.br/impcg/"
           >
-             [IMPCG]
+            [IMPCG]
           </a>
         </DeveloperContent>
       </DeveloperContainer>

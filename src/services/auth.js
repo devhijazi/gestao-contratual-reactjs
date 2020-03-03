@@ -1,4 +1,5 @@
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
+
 const token = () => localStorage.getItem("token");
 
 export function isAuthenticate() {
@@ -16,4 +17,3 @@ export function isAuthenticate() {
 export function authenticate() {}
 
 export function logout() {}
-

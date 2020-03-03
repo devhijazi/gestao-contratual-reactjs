@@ -146,7 +146,6 @@ export const Dropdown = styled.li`
     border: none;
     color: black;
     font-weight: 600;
-   
   }
   button:first-child img {
     width: 30px;
@@ -172,7 +171,7 @@ export const DropdownItems = styled.div`
   flex-direction: column;
   margin-top: 20px;
   background-color: #f9f9f9;
-  box-shadow: 0  3px 1px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   display: ${props => (props.open ? "flex" : "none")};
   button {
