@@ -13,7 +13,7 @@ const FooterComponent = () => {
             rel="noopener noreferrer"
             href="http://www.campogrande.ms.gov.br/impcg/"
           >
-            [IMPCG]
+            IMPCG
           </a>
         </DeveloperContent>
       </DeveloperContainer>

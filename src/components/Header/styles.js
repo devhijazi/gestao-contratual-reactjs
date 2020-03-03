@@ -101,6 +101,7 @@ export const NavbarItem = styled.li`
     font-weight: 500;
     text-transform: uppercase;
     transition: opacity 300ms;
+   
   }
   @media (min-width: 900px) {
     a {

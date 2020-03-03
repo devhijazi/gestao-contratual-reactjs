@@ -32,13 +32,14 @@ export const DeveloperContainer = styled.div`
 export const DeveloperContent = styled.div`
   font-size: 12px;
   font-weight: 300;
-  color: whitesmoke;
+  color: black;
 
   a {
     position: relative;
     opacity: 1;
-    color: white;
+    color: black;
     transition: color 300ms ease;
+    font-weight:bold;
     text-transform: uppercase;
     margin: 5px !important;
   }

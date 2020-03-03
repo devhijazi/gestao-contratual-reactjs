@@ -11,17 +11,11 @@ export const Container = styled.div`
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  h3 {
-    text-align: center;
-    font-size: 50px;
-    color: #8e54e9;
-    text-shadow: 1px 2px 3px black;
-  }
   h4 {
     text-align: center;
     margin-top: 30px;
     font-size: 15px;
-    color: #ffffff;
+    color: black;
   }
 `;
 

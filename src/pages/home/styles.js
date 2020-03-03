@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-
   justify-content: center;
   align-items: center;
+ 
 `;
 
 export const FormContainer = styled.div`
@@ -22,7 +22,7 @@ export const FormContainer = styled.div`
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #D31027;
+    color: black;
     /*color: ${props => props.theme.favColor};*/
     
   }
@@ -56,7 +56,7 @@ export const FormContainer = styled.div`
     :valid ~ label {
       transform: translateY(-45px);
       font-size: 16px;
-      color:  #0099ff;
+      color: black;
     }
   }
   
@@ -79,7 +79,7 @@ export const FormButton = styled.button`
   padding: 10px 60px;
   border-radius: 10px;
   color: #fff;
-  background: #0099ff;
+  background: black;
   /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
   transition: 400ms all;
   box-shadow: 1px 2px 4px black;

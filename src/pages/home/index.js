@@ -8,7 +8,6 @@ import * as Yup from "yup";
 import api from "../../services/api";
 import { authenticate, setUser } from "../../services/auth";
 
-import icon from "../../assets/others/trava.png";
 
 import { Container, FormContainer, FormButton, FormInput } from "./styles";
 
@@ -43,7 +42,7 @@ const HomePage = ({ history }) => {
       const error = ValidationError
         ? `${capitalize(e.path)}: ${e.message}`
         : e.response.data.error;
-      toast.error(error || "Reveja suas informações!");
+      toast.error(error || "Usuário ou senha inválidos.");
     }
   }
 
@@ -51,9 +50,8 @@ const HomePage = ({ history }) => {
     <Container>
       <Form onSubmit={handleSubmit}>
         <FormContainer>
-          <img src={icon} alt="Logo" />
-          <h3> ACESSO RESTRITO </h3>
-          <h6>Somente usuários cadastrados no banco de dados.</h6>
+          <h3>LOGIN</h3>
+          <h6>Somente usuários cadastrados.</h6>
           <FormInput>
             <Input name="email" type="text" required />
             <label>Email</label>
@@ -69,7 +67,7 @@ const HomePage = ({ history }) => {
             </span>
             <label>Senha</label>
           </FormInput>
-          <FormButton type="submit">ENTRAR</FormButton>
+          <FormButton type="submit">LOGIN</FormButton>
           <Link to="/notfound" id="forgotPassword">
             Esqueceu sua senha ? Recupere aqui
           </Link>

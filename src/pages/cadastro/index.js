@@ -11,32 +11,31 @@ const cadastroPage = ({ history }) => {
   return (
     <Container>
       <FormContainer>
-        <h3>CADASTRO</h3>
         <FormInput>
-          <Input type="text" name="name" />
-          <label>Nome/Fantasia</label>
+            <Input type="text" placeholder="Digite o texto aqui..."/>
+            <label>Nome</label>
         </FormInput>
         <FormInput>
-          <Input name="name" type="textarea" />
-          <label>Descrição Breve</label>
+         <Input type="textarea" placeholder="Descrição curta"/>
+         <label>Sobre</label>
+        </FormInput>
+        <FormInput>
+          <Input type="date" placeholder="dd/mm/aaaa" />
+          <label>Inicio do contrato</label>
         </FormInput>
         <FormInput>
           <Input name="date" type="date" />
-          <label>Data Inicio</label>
+          <label>Término do contrato</label>
         </FormInput>
         <FormInput>
-          <Input name="date" type="date" />
-          <label>Data Término</label>
+          <Input type="email" placeholder="example@live.com"/>
+          <label>Email do contrato ou pessoa cadastrado(a)</label>
         </FormInput>
         <FormInput>
-          <Input name="text" type="textarea" />
-          <label>OBS:</label>
+          <Input type="phone" placeholder="(ddd)0000-0000"/>
+          <label>Telefone para contato</label>
         </FormInput>
         <FormButton>CONCLUIR</FormButton>
-        <h4>
-          *Após a conclusão certifique-se que o popUp de cadastro realizado com
-          sucesso apareça.*
-        </h4>
       </FormContainer>
     </Container>
   );
