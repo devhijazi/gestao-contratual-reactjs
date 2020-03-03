@@ -1,9 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
-import bg from '../assets/others/wave.svg';
-import bgFooter from '../assets/others/wave_footer.svg';
+import { createGlobalStyle } from "styled-components";
+import bg from "../assets/others/wave.svg";
+import bgFooter from "../assets/others/wave_footer.svg";
 
 //importing toastfy css
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css";
 
 export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');

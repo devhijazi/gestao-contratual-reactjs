@@ -49,10 +49,9 @@ const HeaderComponent = ({ props }) => {
     window.location.reload("/");
   };
 
-  var x = localStorage.getItem("user");
 
   const warnNotify = () => {
-    toast.error(`Olá, ${x} o sistema de cadastro está Offline.`, {});
+    toast.error(`Olá o sistema de cadastro está Offline.`, {});
   };
 
   return (
@@ -86,7 +85,7 @@ const HeaderComponent = ({ props }) => {
             <Dropdown>
               <NavbarItem>
                 <button type="button" onClick={handleClick}>
-                  <a>{user ? user.name : "Acessando..."}</a>
+                  <a>{user ? user.name : "Logando.."}</a>
                 </button>
                 <DropdownItems open={dropdownOpen} onClick={handleClickItem}>
                   <button type="button">Configuração</button>
