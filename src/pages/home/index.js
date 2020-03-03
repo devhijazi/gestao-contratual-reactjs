@@ -34,11 +34,12 @@ const HomePage = ({ history }) => {
       return history.push("/dashboard");
     } catch (e) {}
   };
-    const notify = () => toast.success(`Logado com sucesso`);
+  const notify = () => toast.success(`Logado com sucesso`);
 
   const setData = e => {
     return setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  
   const handlePassword = () => setPasswordShowing(!passwordShowing);
 
   return (

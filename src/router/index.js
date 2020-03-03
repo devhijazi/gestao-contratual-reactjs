@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 //Importando o Route
 import Route from "./Route";
 
-import { Home, DashBoard, Cadastro, Lista,NotFound } from "../pages";
+import { Home, DashBoard, Cadastro, Lista, NotFound } from "../pages";
 
 const Routes = () => (
   <Router>
@@ -12,8 +12,14 @@ const Routes = () => (
       <Route path="/dashboard" component={DashBoard} privateRoute={true} />
       <Route path="/cadastro" component={Cadastro} privateRoute={true} />
       <Route path="/lista" component={Lista} privateRoute={true} />
-      <Route path="/notfound" component={NotFound} navbar={false} footer={true} />
+      <Route
+        path="/notfound"
+        component={NotFound}
+        navbar={false}
+        footer={true}
+      />
     </Switch>
   </Router>
 );
+
 export default Routes;
