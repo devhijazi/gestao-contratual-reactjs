@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import api from "../../services/api.js";
 import { Link } from "react-router-dom";
-
+import { toast } from "react-toastify";
 import icon from "../../assets/others/trava.png";
 import {
   Container,
@@ -34,11 +34,11 @@ const HomePage = ({ history }) => {
       return history.push("/dashboard");
     } catch (e) {}
   };
+    const notify = () => toast.success(`Logado com sucesso`);
 
   const setData = e => {
     return setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handlePassword = () => setPasswordShowing(!passwordShowing);
 
   return (
@@ -63,7 +63,7 @@ const HomePage = ({ history }) => {
             </span>
             <label>Senha</label>
           </FormInput>
-          <FormButton>ENTRAR</FormButton>
+          <FormButton onClick={notify}>ENTRAR</FormButton>
           <Link to="/notfound" id="forgotPassword">
             Esqueceu sua senha ? Recupere aqui
           </Link>

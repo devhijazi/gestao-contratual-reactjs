@@ -7,11 +7,8 @@ import {
   FormButton
 } from "./styles";
 
-const cadastroPage = ({history}) => {
 
- window.alert(`
- Sistema de cadastro indisponível no momento
- Pressione 'OK' para visualizar a pagina.`);
+const cadastroPage = ({history}) => {
   return (
     <Container>
       <FormContainer>

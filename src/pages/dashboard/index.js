@@ -6,7 +6,7 @@ const dashBoardPage = ({ history }) => {
   var x = localStorage.getItem("user");
   return (
     <Container>
-      <h1>Bem vindo(a) {x}</h1>
+      <h1>{x}</h1>
 
     </Container>
   );
