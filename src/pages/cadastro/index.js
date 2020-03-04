@@ -49,7 +49,7 @@ const RegisterPage = ({ history }) => {
           <Row>
             <input
               className="input is-danger"
-              type="multiline"
+              multiline
               placeholder="Breve descrição"
               name="description"
             />
