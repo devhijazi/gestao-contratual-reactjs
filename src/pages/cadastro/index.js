@@ -2,43 +2,63 @@ import React from "react";
 import {
   Container,
   FormContainer,
-  FormInput,
-  Input,
-  FormButton
+  Row,
+  Column,
+  FormButton,
+ 
 } from "./styles";
 
-const cadastroPage = ({ history }) => {
+const RegisterPage = ({ history }) => {
   return (
     <Container>
       <FormContainer>
-        <FormInput>
-            <Input type="text" placeholder="Digite o texto aqui..."/>
-            <label>Nome</label>
-        </FormInput>
-        <FormInput>
-         <Input type="textarea" placeholder="Descrição curta"/>
-         <label>Sobre</label>
-        </FormInput>
-        <FormInput>
-          <Input type="date" placeholder="dd/mm/aaaa" />
-          <label>Inicio do contrato</label>
-        </FormInput>
-        <FormInput>
-          <Input name="date" type="date" />
-          <label>Término do contrato</label>
-        </FormInput>
-        <FormInput>
-          <Input type="email" placeholder="example@live.com"/>
-          <label>Email do contrato ou pessoa cadastrado(a)</label>
-        </FormInput>
-        <FormInput>
-          <Input type="phone" placeholder="(ddd)0000-0000"/>
-          <label>Telefone para contato</label>
-        </FormInput>
-        <FormButton>CONCLUIR</FormButton>
+     
+          <h1>CADASTRO DE CONTRATO</h1>
+          <Row>
+            <input
+              className="input "
+              type="text"
+              placeholder="Nome"
+              name="name"
+            />
+          </Row>
+          <Row>
+          
+            <input className="input" type="date" name="dateStart" />
+            <input className="input " type="date" name="dateEnd" />
+          </Row>
+          <Row>
+            <input
+              className="input"
+              type="email"
+              placeholder="example@example.com.br"
+              name="email"
+            />
+          </Row>
+          <Row>
+            <a className="button is-static">+55</a>
+            <p className="control is-expanded">
+              <input
+                className="input"
+                type="tel"
+                placeholder="Telefone (Opcional)"
+                name="telefone"
+              />
+            </p>
+          </Row>
+          <Row>
+            <input
+              className="input is-danger"
+              type="textarea"
+              placeholder="Breve descrição"
+              name="description"
+            />
+          </Row>
+          <FormButton type="submit">SALVAR</FormButton>
+          <Column />
       </FormContainer>
     </Container>
   );
 };
 
-export default cadastroPage;
+export default RegisterPage;

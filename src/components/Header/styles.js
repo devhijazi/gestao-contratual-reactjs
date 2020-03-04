@@ -92,6 +92,7 @@ export const Navigation = styled.div`
   }
   nav {
     flex-direction: inline;
+   
   }
 `;
 
@@ -149,52 +150,49 @@ export const Dropdown = styled.li`
     cursor: pointer;
     background: none;
     border: none;
-    color: #000;
+    color: BLACK;
     font-weight: 600;
+    text-transform: uppercase;
+  
   }
-
   button:first-child img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
   }
 
-  button:first-child span {
-    margin-left: 5px;
-  }
-
   @media (max-width: 900px) {
     display: flex;
     width: 100%;
     flex-direction: column;
-
     button {
       padding: 20px 0;
+      
     }
   }
-`;
 
+`;
 export const DropdownItems = styled.div`
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 100%;
   flex-direction: column;
-  margin-top: 16px;
-  background-color: #f9f9f9;
+  margin-top: 20px;
+  background-color: whitesmoke;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   display: ${props => (props.open ? 'flex' : 'none')};
-
   button {
     border: none;
     background: none;
+    
   }
   a,
   button {
     cursor: pointer;
     text-align: center;
     padding: 10px 0;
-    color: #000;
+    color: black;
   }
   a:hover,
   button:hover {
@@ -208,10 +206,11 @@ export const DropdownItems = styled.div`
     a,
     button {
       padding: 10px 0;
-      color: #fff;
+      color: black;
     }
   }
 `;
+
 
 
 export const ResponsiveContainer = styled.div`

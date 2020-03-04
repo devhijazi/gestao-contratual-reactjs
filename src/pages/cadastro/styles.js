@@ -6,6 +6,13 @@ export const Container = styled.div`
   height: 100vh;
   justify-content: center;
   box-sizing: border-box;
+  margin-top: 70px;
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
 `;
 
 export const FormContainer = styled.div`
@@ -13,80 +20,47 @@ export const FormContainer = styled.div`
   flex-direction: column;
   h4 {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: 15px;
     color: black;
   }
 `;
 
-export const FormInput = styled.div`
-  position: relative;
-  margin-top: -2px;
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  color: black;
+  padding: 10px 20px;
 
-  label,
-  span.show {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: Georgia, "Times New Roman", Times, serif;
+  input {
+    text-align: center;
+    border: 0.5px solid black;
+    margin: 0 5px;
   }
-  label {
-    left: 15px;
-    pointer-events: none;
-    color: black;
-    font-size: 15px;
-    transition: all 0.5s;
-  }
-  span.show {
-    cursor: pointer;
-    user-select: none;
-    right: 20px;
-    color: #111;
-    font-size: 10px;
-    font-weight: bold;
-    visibility: hidden;
+  input::placeholder {
+    font-style: italic;
+    color: blue;
   }
 `;
 
-export const Input = styled.input`
-  margin: 20px 0;
-  height: 50px;
-  width: 650px;
-  border: 1px solid #7aa1d2;
-  font-size: 20px;
-  padding: 20px;
-  border-radius: 5px;
-  transition: 400ms;
-  color: #000;
-  :focus {
-    border: 1px solid #f5d20a;
-  }
-  :valid ~ span.show {
-    visibility: visible;
-  }
-  :focus ~ label,
-  :valid ~ label {
-    transform: translateY(-45px);
-    font-size: 15px;
-    color: #000000;
-  }
+export const Column = styled.div`
+
 `;
+
 
 export const FormButton = styled.button`
   cursor: pointer;
   border: none;
   width: 50%;
   margin-top: 10px;
-  margin-inline-start: 324px;
+  margin-inline-start: 240px;
   font-size: 20px;
   font-weight: 400;
-  padding: 10px 60px;
+  padding: 10px 30px;
   border-radius: 10px;
   color: #fff;
-  box-shadow: 2px 2px 3px black;
-  background: linear-gradient(to right, #add100, #7b920a);
+  box-shadow: 1px 1px 2px black;
+  background: green;
   transition: 800ms all;
-  :hover {
-    transform: translateY(5px);
-  }
+
 `;

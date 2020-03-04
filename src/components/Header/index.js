@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { isAuthenticated, getUser } from "../../services/auth.js";
+import { isAuthenticated, getUser, logout } from "../../services/auth.js";
 
 import Logo from "../../assets/img/brasao.png";
 
@@ -12,20 +12,11 @@ import {
   Navigation,
   NavbarItem,
   ResponsiveContainer,
-  FixedItems
+  FixedItems,
+  Dropdown,
+  DropdownItems
 } from "./styles";
 
-const UserContainer = ({ user, dropdownOpen, handleClick }) => {
-  if (user) {
-    return (
-      <button type="button" onClick={handleClick}>
-        <span>{user.name}</span>
-      </button>
-    );
-  }
-
-  return <></>;
-};
 
 const HeaderComponent = () => {
   const [loading, setLoading] = useState(true);
@@ -47,6 +38,25 @@ const HeaderComponent = () => {
   }, []);
 
   const handleClick = () => setDropdownOpen(!dropdownOpen);
+
+  const UserContainer = ({ user, dropdownOpen, handleClick }) => {
+    if (user) {
+      return (
+        <Dropdown>
+          <button type="button" onClick={handleClick}>
+            <span>
+              <i className=" fas fa-user"> </i> {user.name}
+            </span>
+          </button>
+          <DropdownItems open={dropdownOpen}>
+            <button type="button" onClick={logout}>LOGOUT</button>
+          </DropdownItems>
+        </Dropdown>
+      );
+    }
+    return <></>;
+  };
+
 
   return (
     <Container>

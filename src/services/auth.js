@@ -24,7 +24,10 @@ export async function authenticate(token) {
 }
 
 export function logout() {
-  return sessionStorage.removeItem("@token");
+ sessionStorage.removeItem("@token");
+
+ return window.location.reload();
+
 }
 
 // User
