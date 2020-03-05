@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   user-select: none;
+  background-color: #55286f;
 
   header,
   nav,
@@ -9,6 +10,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
   }
+
   @media (max-width: 500px) {
     width: 100%;
 
@@ -22,10 +24,8 @@ export const Header = styled.header`
   z-index: 1;
   align-items: center;
   padding: 0 100px;
-  height: 60px; /*Largua da navbar*/
-  /*Cor da background da navbar*/
-  /*background: linear-gradient(#373B44,#4286f4);*/
-  /* box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);*/
+  height: 60px; /*altura da navbar*/
+
   @media (max-width: 500px) {
     position: fixed;
     width: 100%;
@@ -64,12 +64,15 @@ export const Navigation = styled.div`
   li {
     margin-right: 10px;
   }
+
   li:last-child {
     margin-right: 0px;
   }
+
   li a {
     opacity: 1;
   }
+
   @media (max-width: 500px) {
     position: fixed;
     display: block;
@@ -82,17 +85,19 @@ export const Navigation = styled.div`
     margin: 0 !important;
     padding: 0 !important;
   }
+
   ul {
     width: 100%;
   }
+
   li {
     display: flex;
     justify-content: center;
     margin: 10px !important;
   }
+
   nav {
     flex-direction: inline;
-   
   }
 `;
 
@@ -102,13 +107,14 @@ export const NavbarItem = styled.li`
     font-weight: 500;
     text-transform: uppercase;
     transition: opacity 300ms;
-   
   }
+
   @media (min-width: 900px) {
     a {
       position: relative;
       top: 1px;
     }
+
     a:after {
       content: ".";
       position: absolute;
@@ -122,12 +128,15 @@ export const NavbarItem = styled.li`
       height: 2px;
       transition: width 300ms;
     }
+
     a:hover {
       opacity: 1;
+
+      :after {
+        width: 100%;
+      }
     }
-    a:hover:after {
-      width: 100%;
-    }
+
     @media (max-width: 900px) {
       a {
         text-align: center;
@@ -136,8 +145,6 @@ export const NavbarItem = styled.li`
         border: none !important;
       }
     }
-  }
-  ul {
   }
 `;
 
@@ -153,8 +160,8 @@ export const Dropdown = styled.li`
     color: white;
     font-weight: 600;
     text-transform: uppercase;
-  
   }
+
   button:first-child img {
     width: 30px;
     height: 30px;
@@ -165,44 +172,48 @@ export const Dropdown = styled.li`
     display: flex;
     width: 100%;
     flex-direction: column;
+
     button {
       padding: 20px 0;
-      
     }
   }
-
 `;
+
 export const DropdownItems = styled.div`
   position: absolute;
   z-index: 5;
-  width: 100%;
+  width: 200%;
   flex-direction: column;
+  padding: 5px 0;
   margin-top: 20px;
   background-color: whitesmoke;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  display: ${props => (props.open ? 'flex' : 'none')};
+  display: ${props => (props.open ? "flex" : "none")};
+
   button {
     border: none;
     background: none;
-    
   }
+
   a,
   button {
     cursor: pointer;
     text-align: center;
-    padding: 10px 0;
-    color: black;
+    padding: 6px 20px;
+    color: #000 !important;
   }
+
   a:hover,
   button:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
+
   @media (max-width: 900px) {
     position: relative;
     background: none;
     box-shadow: none;
     margin-top: 0;
+
     a,
     button {
       padding: 10px 0;
@@ -210,8 +221,6 @@ export const DropdownItems = styled.div`
     }
   }
 `;
-
-
 
 export const ResponsiveContainer = styled.div`
   display: none;

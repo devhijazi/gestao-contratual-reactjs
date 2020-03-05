@@ -8,7 +8,6 @@ import * as Yup from "yup";
 import api from "../../services/api";
 import { authenticate, setUser } from "../../services/auth";
 
-
 import { Container, FormContainer, FormButton, FormInput } from "./styles";
 
 const Schema = Yup.object().shape({
@@ -39,10 +38,11 @@ const HomePage = ({ history }) => {
       return setUser(user).then(() => history.push("/dashboard"));
     } catch (e) {
       const ValidationError = e instanceof Yup.ValidationError;
+      const response = e.response;
       const error = ValidationError
         ? `${capitalize(e.path)}: ${e.message}`
-        : e.response.data.error;
-      toast.error(error || "Usuário ou senha inválidos.");
+        : (response && response.data.error) || "Ocorreu um erro";
+      toast.error(error || "Usuário ou senha inválido.");
     }
   }
 
@@ -50,7 +50,7 @@ const HomePage = ({ history }) => {
     <Container>
       <Form onSubmit={handleSubmit}>
         <FormContainer>
-          <h3>LOGIN</h3>
+          <h1>LOGIN</h1>
           <h6>Somente usuários cadastrados.</h6>
           <FormInput>
             <Input name="email" type="text" required />
@@ -62,15 +62,18 @@ const HomePage = ({ history }) => {
               type={passwordShowing ? "text" : "password"}
               required
             />
-            <span class="show" onClick={handlePassword}>
+            <span className="show" onClick={handlePassword}>
               {passwordShowing ? "OCULTAR" : "MOSTRAR"}
             </span>
             <label>Senha</label>
           </FormInput>
           <FormButton type="submit">LOGIN</FormButton>
-          <Link to="/notfound" id="forgotPassword">
-            Esqueceu sua senha ? Recupere aqui
-          </Link>
+          <span className="forgot">
+            <span>Esqueceu sua senha ? </span>
+            <Link to="/notfound" id="forgotPassword">
+              Recupere aqui
+            </Link>
+          </span>
         </FormContainer>
       </Form>
     </Container>

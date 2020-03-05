@@ -1,23 +1,16 @@
 import React from "react";
-//Default style
-import GlobalStyle from "./styles/global.js";
-//importando routes
-import Routes from "./router";
-//Import toast popup
 import { ToastContainer } from "react-toastify";
 
+import Routes from "./router";
+
+import GlobalStyle from "./styles/global.js";
+
 const App = () => (
-  <div>
-    <div id="bgImageTop">
-      <div id="bgImage">
-        <section className="main-container">
-          <Routes />
-          <GlobalStyle />
-          <ToastContainer position="top-right" autoClose={1500} />
-        </section>
-      </div>
-    </div>
-  </div>
+  <section className="main-container">
+    <Routes />
+    <GlobalStyle />
+    <ToastContainer position="top-right" autoClose={1500} />
+  </section>
 );
 
 export default App;
