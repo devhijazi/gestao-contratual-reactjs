@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import bg from "../assets/others/wave.svg";
-import bgFooter from "../assets/others/wave_footer.svg";
+
+// import bg from "../assets/others/wave.svg";
+// import bgFooter from "../assets/others/wave_footer.svg";
 
 //importing toastfy css
 import "react-toastify/dist/ReactToastify.css";
@@ -19,11 +20,6 @@ export default createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-  body {
-    font-family: 'PT Sans Narrow', sans-serif;
-   
-  }
-
   ul {
     list-style-type: none;
   }
@@ -34,18 +30,6 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
-  }
-
-  #bgImageTop {
-    background-image: url(${bg});
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-
-  #bgImage {
-    background-image: url(${bgFooter});
-    background-repeat: no-repeat;
-    background-position: bottom;
   }
 
   .main-container {
