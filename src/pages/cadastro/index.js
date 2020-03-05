@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const RegisterPage = ({ history }) => {
   async function handleSubmit(data) {
     try {
-      api.post("/contract", data, {
+     await api.post("/contract", data, {
         headers: { Authorization: token() }
       });
     } catch (e) {
