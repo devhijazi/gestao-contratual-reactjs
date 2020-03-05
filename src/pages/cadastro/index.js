@@ -1,61 +1,36 @@
 import React from "react";
-import {
-  Container,
-  FormContainer,
-  Row,
-  Column,
-  FormButton,
- 
-} from "./styles";
+import { Container, FormContainer, Row, Column, FormButton } from "./styles";
+import { Input } from "@rocketseat/unform";
 
 const RegisterPage = ({ history }) => {
   return (
     <Container>
       <FormContainer>
-     
-          <h1>CADASTRO DE CONTRATO</h1>
-          <Row>
-            <input
-              className="input "
-              type="text"
-              placeholder="Nome"
-              name="name"
-            />
-          </Row>
-          <Row>
-          
-            <input className="input" type="date" name="dateStart" />
-            <input className="input " type="date" name="dateEnd" />
-          </Row>
-          <Row>
-            <input
-              className="input"
-              type="email"
-              placeholder="example@example.com.br"
-              name="email"
-            />
-          </Row>
-          <Row>
-            <a className="button is-static">+55</a>
-            <p className="control is-expanded">
-              <input
-                className="input"
-                type="tel"
-                placeholder="Telefone (Opcional)"
-                name="telefone"
-              />
-            </p>
-          </Row>
-          <Row>
-            <input
-              className="input is-danger"
-              multiline
-              placeholder="Breve descrição"
-              name="description"
-            />
-          </Row>
-          <FormButton type="submit">SALVAR</FormButton>
-          <Column />
+        <h1>CADASTRO DE CONTRATO</h1>
+        <Row>
+          <label>Nome:</label>
+          <Input className="input" type="text" name="nome"/>
+        </Row>
+        <Row>
+          <label>Data do inicio do contrato:</label>
+          <Input className="input" type="date" name="dateStart" />
+          <label>Data final do contrato:</label>
+          <Input className="input" type="date" name="dateEnd" />
+        </Row>
+        <Row>
+          <label>Email para contato:</label>
+          <Input className="input" type="email" name="email" />
+        </Row>
+        <Row>
+          <label>Telefone(Opicional):</label>
+          <Input className="input" type="tel" name="telefone" />
+        </Row>
+        <Row>
+          <label>Adicionar descrição:</label>
+          <Input multiline className="input" name="description" />
+        </Row>
+        <FormButton type="submit">SALVAR</FormButton>
+        <Column />
       </FormContainer>
     </Container>
   );

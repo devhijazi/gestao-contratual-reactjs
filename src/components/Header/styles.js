@@ -150,7 +150,7 @@ export const Dropdown = styled.li`
     cursor: pointer;
     background: none;
     border: none;
-    color: BLACK;
+    color: white;
     font-weight: 600;
     text-transform: uppercase;
   

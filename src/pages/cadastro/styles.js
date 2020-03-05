@@ -3,21 +3,24 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: auto;
   justify-content: center;
   box-sizing: border-box;
-  margin-top: 70px;
+  margin-bottom: 40px;
+  margin-top: 10px;
   h1 {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 50px;
+    color: black;
   }
 `;
 
 export const FormContainer = styled.div`
-  display: flex;
   flex-direction: column;
+  justify-content: stretch;
+  justify-content: space-between;
+  margin-top: 10px;
   h4 {
     text-align: center;
     margin-top: 50px;
@@ -27,40 +30,33 @@ export const FormContainer = styled.div`
 `;
 
 export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: stretch;
+  justify-content: space-between;
   color: black;
-  padding: 10px 20px;
+  padding: 2px 10px;
 
-  input {
-    text-align: center;
-    border: 0.5px solid black;
-    margin: 0 5px;
-  }
-  input::placeholder {
-    font-style: italic;
-    color: blue;
+  textarea {
+    padding-bottom: 70px;
   }
 `;
 
 export const Column = styled.div`
-
+ flex-direction: column;
+ justify-content: space-between;
+ 
 `;
-
 
 export const FormButton = styled.button`
   cursor: pointer;
   border: none;
-  width: 50%;
-  margin-top: 10px;
-  margin-inline-start: 240px;
+  width: 140px;
+  margin-top: 5px;
   font-size: 20px;
-  font-weight: 400;
-  padding: 10px 30px;
-  border-radius: 10px;
-  color: #fff;
+  font-weight: 200;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: black;
   box-shadow: 1px 1px 2px black;
-  background: green;
-  transition: 800ms all;
-
+  background: greenyellow;
 `;
