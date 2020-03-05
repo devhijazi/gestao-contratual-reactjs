@@ -1,33 +1,35 @@
 import React from "react";
 import { Container, FormContainer, Row, Column, FormButton } from "./styles";
-import { Input } from "@rocketseat/unform";
+import { Form } from "@rocketseat/unform";
 
 const RegisterPage = ({ history }) => {
+
+
   return (
     <Container>
       <FormContainer>
         <h1>CADASTRO DE CONTRATO</h1>
         <Row>
           <label>Nome:</label>
-          <Input className="input" type="text" name="nome"/>
+          <input className="input" type="text" name="name"/>
         </Row>
         <Row>
           <label>Data do inicio do contrato:</label>
-          <Input className="input" type="date" name="dateStart" />
+          <input className="input" type="date" name="createdAt" />
           <label>Data final do contrato:</label>
-          <Input className="input" type="date" name="dateEnd" />
+          <input className="input" type="date" name="finalAt" />
         </Row>
         <Row>
           <label>Email para contato:</label>
-          <Input className="input" type="email" name="email" />
+          <input className="input" type="email" name="email" />
         </Row>
         <Row>
           <label>Telefone(Opicional):</label>
-          <Input className="input" type="tel" name="telefone" />
+          <input className="input" type="tel" name="contact" />
         </Row>
         <Row>
           <label>Adicionar descrição:</label>
-          <Input multiline className="input" name="description" />
+          <input multiline className="input" name="description" />
         </Row>
         <FormButton type="submit">SALVAR</FormButton>
         <Column />
