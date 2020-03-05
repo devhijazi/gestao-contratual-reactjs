@@ -73,13 +73,13 @@ const HeaderComponent = () => {
           <nav>
             <ul>
               <NavbarItem path="/cadastro">
-                <Link to="/cadastro">Cadastro</Link>
+                <Link to="/cadastro">CADASTRAR</Link>
               </NavbarItem>
               <NavbarItem path="/lista">
-                <Link to="/lista">Lista</Link>
+                <Link to="/lista">PROCURAR</Link>
               </NavbarItem>
               <NavbarItem path="/">
-                <Link to="/notifications">Notificações</Link>
+                <Link to="/notifications">VENCIMENTOS</Link>
               </NavbarItem>
             </ul>
           </nav>
