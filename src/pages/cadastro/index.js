@@ -1,10 +1,22 @@
 import React from "react";
 import { Container, FormContainer, Row, Column, FormButton } from "./styles";
-import { Form } from "@rocketseat/unform";
+import { Form, Input } from "@rocketseat/unform";
+
+import api from "../../services/api";
+import { token } from "../../services/auth";
+import { toast } from "react-toastify";
 
 const RegisterPage = ({ history }) => {
-  function handleSubmit(data) {
-    console.log(data);
+  async function handleSubmit(data) {
+    try {
+      api.post("/contract", data, {
+        headers: { Authorization: token() }
+      });
+    } catch (e) {
+      const error = e.response.data.error || "Ocorreu um erro";
+
+      toast.error(error || "Verifique todos os campos");
+    }
   }
 
   return (
@@ -14,25 +26,25 @@ const RegisterPage = ({ history }) => {
           <h1>CADASTRO DE CONTRATO</h1>
           <Row>
             <label>Nome:</label>
-            <input className="input" type="text" name="name" />
+            <Input className="input" type="text" name="name" />
           </Row>
           <Row>
             <label>Data do inicio do contrato:</label>
-            <input className="input" type="date" name="createdAt" />
+            <Input className="input" type="date" name="createdAt" />
             <label>Data final do contrato:</label>
-            <input className="input" type="date" name="finalAt" />
+            <Input className="input" type="date" name="finalAt" />
           </Row>
           <Row>
             <label>Email para contato:</label>
-            <input className="input" type="email" name="email" />
+            <Input className="input" type="email" name="email" />
           </Row>
           <Row>
             <label>Telefone(Opicional):</label>
-            <input className="input" type="tel" name="contact" />
+            <Input className="input" type="tel" name="contact" />
           </Row>
           <Row>
             <label>Adicionar descrição:</label>
-            <input multiline className="input" name="description" />
+            <Input multiline className="input" name="description" />
           </Row>
           <FormButton type="submit">SALVAR</FormButton>
           <Column />

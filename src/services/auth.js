@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const token = () => sessionStorage.getItem("@token");
+export const token = () => sessionStorage.getItem("@token");
 
 export function verify(token) {
   try {
