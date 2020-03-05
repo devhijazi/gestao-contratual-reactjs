@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  width: 100%;
-  height: auto;
   justify-content: center;
   box-sizing: border-box;
   margin-bottom: 40px;
   margin-top: 10px;
+
   h1 {
     text-align: center;
     font-size: 40px;
@@ -16,16 +14,34 @@ export const Container = styled.div`
   }
 `;
 
+export const Hero = styled.section`
+  background-color: #bc96e6;
+  margin-top: 40px;
+  margin-bottom: 60px;
+
+  * {
+    text-align: left !important;
+  }
+`;
+
 export const FormContainer = styled.div`
+  width: 700px;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: stretch;
   justify-content: space-between;
   margin-top: 10px;
-  h4 {
+
+  h1 {
     text-align: center;
     margin-top: 50px;
-    font-size: 15px;
-    color: black;
+    margin-bottom: 60px;
+    color: #000;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 30px;
   }
 `;
 
@@ -35,16 +51,11 @@ export const Row = styled.div`
   justify-content: space-between;
   color: black;
   padding: 2px 10px;
-
-  textarea {
-    padding-bottom: 70px;
-  }
 `;
 
 export const Column = styled.div`
- flex-direction: column;
- justify-content: space-between;
- 
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const FormButton = styled.button`

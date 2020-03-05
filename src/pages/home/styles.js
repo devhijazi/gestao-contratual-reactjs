@@ -4,7 +4,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
- 
 `;
 
 export const FormContainer = styled.div`
@@ -13,59 +12,38 @@ export const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 60px 40px;
-  margin-top:50px;
-  background: #fff;
-  box-shadow: 1px 2px 10px 0 rgba(0, 0, 0, 0.6);
+  margin-top: 50px;
   border-radius: 10px;
 
-  h3 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: black;
-    /*color: ${props => props.theme.favColor};*/
-    
+  h6 {
+    color: #AE759F;
   }
-  
+
+  h1 {
+    font-size: 44px;
+    font-weight: 900;
+    color: #bc96e6;
+    margin-bottom: 10px;
+  }
+
   img {
     width: 40px;
     height: 40px;
   }
 
-  input {
-    margin: 25px 0;
-    height: 50px;
-    width: 400px;
-    border: 1px solid silver;
-    outline: none;
-    font-size: 14px;
-    padding-left: 15px;
-    border-radius: 5px;
-    transition: 400ms;
-    color: #000;
+  span.forgot {
+    margin-top: 20px;
 
-    :focus {
-      border: 1px solid  #0099ff;
-    }
-
-    :valid ~ span.show {
-      visibility: visible;
-    }
-
-    :focus ~ label,
-    :valid ~ label {
-      transform: translateY(-45px);
-      font-size: 16px;
-      color: black;
+    a:hover {
+      border-bottom: 1px solid #408eed;
     }
   }
-  
+
   #forgotPassword {
     color: #408eed;
     margin-top: 10px;
-    align-items:center;
-    justify-content:center;
-    
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -77,12 +55,11 @@ export const FormButton = styled.button`
   font-size: 22px;
   font-weight: 600;
   padding: 10px 60px;
-  border-radius: 10px;
   color: #fff;
-  background: black;
-  /*background: linear-gradient(to right, #f7ff00, #db36a4);*/
+  background: #210b2c;
   transition: 400ms all;
-  box-shadow: 1px 2px 4px black;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.4);
+
   :hover {
     transform: translateY(-2px);
   }
@@ -114,5 +91,32 @@ export const FormInput = styled.div`
     font-size: 14px;
     font-weight: bold;
     visibility: hidden;
+  }
+
+  input {
+    margin: 25px 0;
+    height: 50px;
+    width: 400px;
+    font-size: 14px;
+    padding-left: 15px;
+    transition: 400ms;
+    color: #000;
+
+    :valid ~ span.show {
+      visibility: visible;
+    }
+
+    :valid {
+      border: 1px solid #000;
+    }
+
+    :focus,
+    :valid {
+      & ~ label {
+        transform: translateY(-50px);
+        font-size: 16px;
+        color: black;
+      }
+    }
   }
 `;
