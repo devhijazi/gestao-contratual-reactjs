@@ -12,7 +12,6 @@ const RegisterPage = ({ history }) => {
      await api.post("/contract", data, {
         headers: { Authorization: token() }
       });
-    
     } catch (e) {
       const error = e.response.data.error || "Ocorreu um erro";
 
