@@ -27,7 +27,6 @@ const HeaderComponent = () => {
     async function getLoggedUser() {
       if (isAuthenticated()) {
         const localUser = getUser();
-        console.log(localUser);
         setUser(localUser);
       }
 
