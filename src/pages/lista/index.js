@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import api from "../../services/api";
+import { token } from "../../services/auth";
+
+import moment from "moment";
 
 import { Container, Row, RowHeader, RowItems } from "./styles";
 
-const listPage = ({ history }) => {
+
+const ListPage = () => {
+  const [loading, setLoading] = useState(true);
+  const [itemList, setItemList] = useState([]);
+
+  useEffect(() => {
+    async function getContracts() {
+      const { contracts } = await api
+        .get("/contracts", {
+          headers: { Authorization: token() }
+        })
+        .then(r => r.data);
+
+      setItemList(
+        contracts.map(c => ({
+          ...c,
+          createdAt: moment(c.createdAt).format("L"),
+          finalAt: moment(c.finalAt).format("L")
+        }))
+      );
+      setLoading(false);
+    }
+
+    getContracts();
+  }, []);
+
+  if (loading) return <h1>Carregando Banco de dados</h1>;
+
   const items = [
     { title: "Titulo", property: "name" },
     { title: "Email", property: "email" },
@@ -11,57 +43,6 @@ const listPage = ({ history }) => {
     { title: "Data Final", property: "finalAt" }
   ];
 
-  const data = [
-    {
-      name: "Nepto",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "Top mane"
-    },
-    {
-      name: "Clinica",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "Teste"
-    },
-    {
-      name: "IMPCG",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "SISTEMA"
-    },
-    {
-      name: "Casa",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "SISTEMA"
-    },
-    {
-      name: "Asilo",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "SISTEMA"
-    },
-    {
-      name: "Farmácia",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "SISTEMA"
-    },
-    {
-      name: "Ortopedista",
-      createdAt: "05/03/2020",
-      finalAt: "05/03/2021",
-      email: "abcde@x.com",
-      description: "SISTEMA"
-    }
-  ];
   return (
     <Container>
       {items.map(item => (
@@ -70,7 +51,7 @@ const listPage = ({ history }) => {
             <h6>{item.title}</h6>
           </RowHeader>
           <RowItems>
-            {data.map(d => (
+            {itemList.map(d => (
               <p>{d[item.property]}</p>
             ))}
           </RowItems>
@@ -79,4 +60,5 @@ const listPage = ({ history }) => {
     </Container>
   );
 };
-export default listPage;
+
+export default ListPage;

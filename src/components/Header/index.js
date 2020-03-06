@@ -75,7 +75,7 @@ const HeaderComponent = () => {
                 <Link to="/cadastro">CADASTRAR</Link>
               </NavbarItem>
               <NavbarItem path="/lista">
-                <Link to="/lista">PROCURAR</Link>
+                <Link to="/lista">CONTRATOS</Link>
               </NavbarItem>
               <NavbarItem path="/">
                 <Link to="/notifications">VENCIMENTOS</Link>

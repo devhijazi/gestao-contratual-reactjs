@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   overflow: auto;
   padding: 0 auto;
+
 `;
 
 export const RowHeader = styled.header`
@@ -12,7 +13,6 @@ export const RowHeader = styled.header`
   color: white;
   h6 {
     font-weight: bold;
-  
   }
 `;
 
@@ -23,8 +23,7 @@ export const RowItems = styled.div`
   p {
     :nth-child(even) {
       background-color: #f2f2f2;
-      color:black;
-     
+      color: black;
     }
   }
 `;

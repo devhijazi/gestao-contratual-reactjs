@@ -8,7 +8,7 @@ const dashBoardPage = () => {
         <div className="hero-body">
           <div className="container">
             <h1 className="title">Painel de controle</h1>
-            <h2 className="subtitle">Contém informações básicas sobre o sistema.content-start</h2>
+            <h2 className="subtitle">Contém informações básicas sobre o sistema.</h2>
           </div>
         </div>
       </Hero>

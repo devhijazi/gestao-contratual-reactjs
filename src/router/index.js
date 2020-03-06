@@ -11,7 +11,7 @@ const Routes = () => (
       <Route exact path="/" component={Home} navbar={false} footer={false} />
       <Route path="/dashboard" component={DashBoard} privateRoute={true} />
       <Route path="/cadastro" component={Cadastro} privateRoute={true} />
-      <Route path="/lista" component={Lista} privateRoute={true} navbar={false} />
+      <Route path="/lista" component={Lista} privateRoute={true} navbar={false} footer={false} />
       <Route
         path="/notfound"
         component={NotFound}
