@@ -18,7 +18,7 @@ const RegisterPage = () => {
   async function handleSubmit(data) {
     console.log(data);
     try {
-      await api.post("/contract", data, {
+      await api.post("/contracts", data, {
         headers: { Authorization: token() }
       });
 

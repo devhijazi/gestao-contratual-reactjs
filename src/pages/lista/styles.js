@@ -1,14 +1,34 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: block;
+  display: flex;
   width: 100%;
-  justify-content: center;
-  box-sizing: border-box;
+  overflow: auto;
+  padding: 0 auto;
 `;
 
-export const RowHeader = styled.header``;
+export const RowHeader = styled.header`
+  background-color: #319e4e;
+  color: white;
+  h6 {
+    font-weight: bold;
+  
+  }
+`;
 
-export const RowItems = styled.div``;
+export const RowItems = styled.div`
+  background-color: #e9e8ff;
+  color: blue;
+  font-weight: bold;
+  p {
+    :nth-child(even) {
+      background-color: #f2f2f2;
+      color:black;
+     
+    }
+  }
+`;
 
-export const Row = styled.div``;
+export const Row = styled.div`
+  flex-grow: 1;
+`;

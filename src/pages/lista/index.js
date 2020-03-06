@@ -14,24 +14,52 @@ const listPage = ({ history }) => {
   const data = [
     {
       name: "Nepto",
-      createdAt: "Ontem",
-      finalAt: "2021",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
       email: "abcde@x.com",
       description: "Top mane"
     },
     {
-      name: "Nepto 2",
-      createdAt: "Ontem",
-      finalAt: "2021",
+      name: "Clinica",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
       email: "abcde@x.com",
-      description: "Top mane"
+      description: "Teste"
     },
     {
-      name: "Nepto 3",
-      createdAt: "Ontem",
-      finalAt: "2021",
+      name: "IMPCG",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
       email: "abcde@x.com",
-      description: "Top mane"
+      description: "SISTEMA"
+    },
+    {
+      name: "Casa",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
+      email: "abcde@x.com",
+      description: "SISTEMA"
+    },
+    {
+      name: "Asilo",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
+      email: "abcde@x.com",
+      description: "SISTEMA"
+    },
+    {
+      name: "Farmácia",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
+      email: "abcde@x.com",
+      description: "SISTEMA"
+    },
+    {
+      name: "Ortopedista",
+      createdAt: "05/03/2020",
+      finalAt: "05/03/2021",
+      email: "abcde@x.com",
+      description: "SISTEMA"
     }
   ];
   return (
@@ -43,7 +71,7 @@ const listPage = ({ history }) => {
           </RowHeader>
           <RowItems>
             {data.map(d => (
-              <p>{data[item.property]}</p>
+              <p>{d[item.property]}</p>
             ))}
           </RowItems>
         </Row>
