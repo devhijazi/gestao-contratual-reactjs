@@ -13,3 +13,12 @@ export const Container = styled.div`
     text-shadow: 1px 1px 2px black;
   }
 `;
+export const Hero = styled.section`
+  background-color: #bc96e6;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  * {
+    text-align: left !important;
+  }
+`;
+
