@@ -7,7 +7,6 @@ import moment from "moment";
 
 import { Container, Row, RowHeader, RowItems } from "./styles";
 
-
 const ListPage = () => {
   const [loading, setLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
