@@ -23,6 +23,7 @@ export async function authenticate(token) {
   return sessionStorage.setItem("@token", token);
 }
 
+
 export function logout() {
  sessionStorage.removeItem("@token");
 

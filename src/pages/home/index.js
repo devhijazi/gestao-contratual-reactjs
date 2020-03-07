@@ -69,9 +69,9 @@ const HomePage = ({ history }) => {
           </FormInput>
           <FormButton type="submit">LOGIN</FormButton>
           <span className="forgot">
-            <span>Esqueceu sua senha ? </span>
-            <Link to="/notfound" id="forgotPassword">
-              Recupere aqui
+            <span>Não cadastrado ? </span>
+            <Link to="/register" id="RegisterPage">
+              Crie sua conta aqui.
             </Link>
           </span>
         </FormContainer>
