@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 
 import api from "../../services/api";
 import { token } from "../../services/auth";
-
-import moment from "moment";
 
 import { Container, Row, RowHeader, RowItems } from "./styles";
 
@@ -36,27 +35,27 @@ const ListPage = () => {
 
   const items = [
     { title: "Titulo", property: "name" },
-    { title: "Email", property: "email" },
+    { title: "Contato", property: "email" },
     { title: "Data Inicial", property: "createdAt" },
-    { title: "Descrição", property: "description" },
-    { title: "Data Final", property: "finalAt" }
+    { title: "Data Final", property: "finalAt" },
+    { title: "Descrição", property: "description" }
   ];
 
   return (
-    <Container>
-      {items.map(item => (
-        <Row>
-          <RowHeader>
-            <h6>{item.title}</h6>
-          </RowHeader>
-          <RowItems>
-            {itemList.map(d => (
-              <p>{d[item.property]}</p>
-            ))}
-          </RowItems>
-        </Row>
-      ))}
-    </Container>
+      <Container>
+        {items.map(item => (
+          <Row>
+            <RowHeader>
+              <h6>{item.title}</h6>
+            </RowHeader>
+            <RowItems>
+              {itemList.map(d => (
+                <p>{d[item.property]}</p>
+              ))}
+            </RowItems>
+          </Row>
+        ))}
+      </Container>
   );
 };
 

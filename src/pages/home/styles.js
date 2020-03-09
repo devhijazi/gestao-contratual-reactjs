@@ -16,7 +16,7 @@ export const FormContainer = styled.div`
   border-radius: 10px;
 
   h6 {
-    color: #AE759F;
+    color: #ae759f;
   }
 
   h1 {
@@ -32,11 +32,14 @@ export const FormContainer = styled.div`
   }
 
   span.forgot {
-    margin-top: 20px;
+    margin-top: 5px;
 
     a:hover {
       border-bottom: 1px solid #408eed;
     }
+  }
+  span.register {
+    margin-top: 5px;
   }
 
   #forgotPassword {

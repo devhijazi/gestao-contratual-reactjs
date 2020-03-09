@@ -38,7 +38,7 @@ const VencPage = () => {
 
   const items = [
     { title: "Titulo", property: "name" },
-    { title: "Email", property: "email" },
+    { title: "Contato", property: "email" },
     { title: "Data Inicial", property: "createdAt" },
     { title: "Data Final", property: "finalAt" },
     { title: "Adicionado Por", property: "createdBy" },

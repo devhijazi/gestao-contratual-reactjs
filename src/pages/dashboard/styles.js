@@ -4,11 +4,18 @@ export const Container = styled.div`
   display: block;
   width: 100%;
   justify-content: center;
-  margin-bottom: 11%;
+  margin-bottom: 12%;
+
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+  }
 `;
 export const Hero = styled.section`
   background-color: #bc96e6;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 60px;
   * {
     text-align: left !important;
@@ -17,22 +24,21 @@ export const Hero = styled.section`
 
 export const CounterContainer = styled.div`
   justify-content: center;
-  padding: 60px 50px;
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.3);
-  margin: 10px 10px;
+  padding: 10px 30px;
+  margin: 20px 10px;
   border-radius: 5px;
   h2 {
     text-align: center;
     font-style: oblique;
     font-weight: bold;
     font-size: 30px;
-    color: #6A5ACD;
+    color: #6a5acd;
   }
 
   h1 {
     text-align: center;
     font-weight: bold;
     font-size: 50px;
-    color: #483D8B;
+    color: #483d8b;
   }
 `;
