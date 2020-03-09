@@ -3,9 +3,10 @@ import DashBoard from "./dashboard";
 import Cadastro from "./cadastro";
 import Lista from "./lista";
 import NotFound from "./notfound";
-import Register from './register';
+import Register from "./register";
+import Overdue from "./venc";
 
-export { Home, DashBoard, Cadastro, Lista, NotFound,Register };
+export { Home, DashBoard, Cadastro, Lista, NotFound, Register, Overdue };
 
 /**
  * EXPORTA AS PAGINAS, CADA PAGINA NOVA DEVE SER EXPORTADA POR AQUI ANTES!!!
