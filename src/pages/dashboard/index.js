@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Hero, CounterContainer } from "./styles";
 
+import api from '../../services/api';
+
 const dashBoardPage = () => {
+  const [count, setCount] = useState(0);
+
+
+  useEffect(() => {
+    async function getContracts() {
+      const { contracts } = await api.get("/contracts").then(r => r.data);
+
+      setCount(contracts.length);
+    }
+    getContracts();
+  }, []);
+
   return (
     <Container>
       <Hero className="hero">
@@ -16,7 +30,7 @@ const dashBoardPage = () => {
       </Hero>
       <CounterContainer>
         <h2>Contratos cadastrados</h2>
-        <h1>0</h1>
+        <h1>{count}</h1>
       </CounterContainer>
     </Container>
   );

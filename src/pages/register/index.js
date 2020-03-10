@@ -4,7 +4,6 @@ import { toast } from "react-toastify";
 import { Form, Input } from "@rocketseat/unform";
 
 import api from "../../services/api";
-import { token } from "../../services/auth.js";
 
 import { Container, FormContainer, FormButton, FormInput } from "./styles";
 
@@ -18,9 +17,7 @@ const RegisterPage = ({ history }) => {
   
   async function handleSubmit(data) {
     try { 
-      await api.post("/admin", data, {
-        headers: { Authorization: token() }
-      });
+      await api.post("/admin", data);
 
       const alerted = window.confirm("Usuário registrado com sucesso.");
       if (alerted) window.location.reload()
