@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-/*import { toast } from "react-toastify";*/
+import { toast } from "react-toastify";
 
 import { Form, Input } from "@rocketseat/unform";
 
-/*import api from "../../services/api";*/
-/*import { NoAuthenticate, registerUser } from "../../services/auth";*/
+import api from "../../services/api";
+import { token } from "../../services/auth.js";
 
 import { Container, FormContainer, FormButton, FormInput } from "./styles";
 
@@ -15,23 +15,25 @@ const RegisterPage = ({ history }) => {
   function handlePassword() {
     setPasswordShowing(!passwordShowing);
   }
-  /*
+  
   async function handleSubmit(data) {
-    console.log(data);
-    try {
-      const { token, user } = await api.post(`/admin`).then(r => r.data);
-      await NoAuthenticate(token).catch(() => window.location.reload());
-      return registerUser(user).then(() => history.push("/"));
+    try { 
+      await api.post("/admin", data, {
+        headers: { Authorization: token() }
+      });
+
+      const alerted = window.confirm("Usuário registrado com sucesso.");
+      if (alerted) window.location.reload()
     } catch (e) {
       const response = e.response;
       const error = (response && response.data.error) || "Ocorreu um erro";
-      toast.error(error || "Erro ao registrar uma nova conta");
+      toast.error(error || "Verifique todos os campos");
     }
   }
-  */
+  
   return (
     <Container>
-      <Form /*onSubmit={handleSubmit}*/>
+      <Form onSubmit={handleSubmit}>
         <FormContainer>
           <img src={registerUserLogo} alt="Logo" />
           <h1>CADASTRAR</h1>
