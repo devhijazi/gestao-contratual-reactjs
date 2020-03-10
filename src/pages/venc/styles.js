@@ -17,12 +17,12 @@ export const RowHeader = styled.header`
 
 export const RowItems = styled.div`
   background-color: #e9e8ff;
-  color: blue;
+  color:green;
   font-weight: bold;
-
+ 
   p {
     :nth-child(even) {
-      background-color: #382928;
+      background-color: #f2f2f2;
       color: black;
     }
   }

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: block;
-  width: 100%;
   justify-content: center;
-  margin-bottom: 12%;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  display: block;
 
   h1 {
     text-align: center;
@@ -13,32 +13,31 @@ export const Container = styled.div`
     color: black;
   }
 `;
+
 export const Hero = styled.section`
   background-color: #bc96e6;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 60px;
+
   * {
     text-align: left !important;
   }
 `;
 
 export const CounterContainer = styled.div`
-  justify-content: center;
-  padding: 10px 30px;
-  margin: 20px 10px;
-  border-radius: 5px;
-  h2 {
-    text-align: center;
-    font-style: oblique;
-    font-weight: bold;
-    font-size: 30px;
-    color: #6a5acd;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  margin: 15px auto;
+
+  h1{
+    text-align: left;
+    margin-top: 0 auto;
+    color: #fa9200;
+  }
+  span{
+    color: #6633f2;
+    justify-content: space-between;
   }
 
-  h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-    color: #483d8b;
-  }
 `;

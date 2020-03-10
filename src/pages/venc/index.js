@@ -1,16 +1,22 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 
-//import api from "../../services/api";
-//import { token } from "../../services/auth";
+import api from "../../services/api";
+import { token } from "../../services/auth";
 
-//import moment from "moment";
+import moment from "moment";
 
 import { Container, Row, RowHeader, RowItems } from "./styles";
 
 const VencPage = () => {
-  /*
+  
   const [loading, setLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
+  //Moment fix 
+  moment.locale('pt',{
+    calendar:{
+      sameElse: 'DD/MM/YYYY'
+    }
+  });
 
   useEffect(() => {
     async function getContracts() {
@@ -23,8 +29,8 @@ const VencPage = () => {
       setItemList(
         contracts.map(c => ({
           ...c,
-          createdAt: moment(c.createdAt).format("L"),
-          finalAt: moment(c.finalAt).format("L")
+          createdAt:moment(c.createdAt,['YYYY-MM-DD']).calendar(),
+          finalAt: moment(c.finalAt,['YYYY-MM-DD']).calendar()
         }))
       );
       setLoading(false);
@@ -34,7 +40,7 @@ const VencPage = () => {
   }, []);
 
   if (loading) return <h1>Carregando Banco de dados</h1>;
-  */
+  
 
   const items = [
     { title: "Titulo", property: "name" },
@@ -52,7 +58,9 @@ const VencPage = () => {
             <h6>{item.title}</h6>
           </RowHeader>
           <RowItems>
-            <h1>Em construção</h1>
+          {itemList.map(d => (
+                <p>{d[item.property]}</p>
+              ))}
           </RowItems>
         </Row>
       ))}

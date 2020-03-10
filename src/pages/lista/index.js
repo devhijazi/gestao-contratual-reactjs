@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 
+
 import api from "../../services/api";
 import { token } from "../../services/auth";
 
@@ -9,6 +10,12 @@ import { Container, Row, RowHeader, RowItems } from "./styles";
 const ListPage = () => {
   const [loading, setLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
+
+  moment.locale('pt',{
+    calendar:{
+      sameElse: 'DD/MM/YYYY'
+    }
+  });
 
   useEffect(() => {
     async function getContracts() {
@@ -21,8 +28,8 @@ const ListPage = () => {
       setItemList(
         contracts.map(c => ({
           ...c,
-          createdAt: moment(c.createdAt).format("L"),
-          finalAt: moment(c.finalAt).format("L")
+          createdAt: moment(c.createdAt,['YYYY-MM-DD']).calendar(),
+          finalAt: moment(c.finalAt,['YYYY-MM-DD']).calendar()
         }))
       );
       setLoading(false);

@@ -4,8 +4,11 @@ import { Container, Hero, CounterContainer } from "./styles";
 import api from "../../services/api";
 import { token } from "../../services/auth.js";
 
+import moment from "moment";
+
 const DashBoardPage = () => {
   const [count, setCount] = useState(0);
+  const hoje = moment(Date.now()).format("DD/MM/YYYY");
 
   useEffect(() => {
     async function getContracts() {
@@ -27,14 +30,22 @@ const DashBoardPage = () => {
           <div className="container">
             <h1 className="title">Painel de controle</h1>
             <h2 className="subtitle">
-              Contém informações básicas sobre o sistema.
+              Gestão contratual via cloud storage
             </h2>
           </div>
         </div>
       </Hero>
       <CounterContainer>
-        <h2>Contratos cadastrados</h2>
-        <h1>{count}</h1>
+        <h1>
+          Armazenado:
+          <span> {count} contratos</span>
+        </h1>
+      </CounterContainer>
+      <CounterContainer>
+        <h1>
+          Dia de Hoje:
+          <span> {hoje} </span>
+        </h1>
       </CounterContainer>
     </Container>
   );
