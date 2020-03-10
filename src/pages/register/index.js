@@ -20,7 +20,7 @@ const RegisterPage = ({ history }) => {
       await api.post("/admin", data);
 
       const alerted = window.confirm("Usuário registrado com sucesso.");
-      if (alerted) window.location.reload()
+      if (alerted) window.location.reload('/')
     } catch (e) {
       const response = e.response;
       const error = (response && response.data.error) || "Ocorreu um erro";

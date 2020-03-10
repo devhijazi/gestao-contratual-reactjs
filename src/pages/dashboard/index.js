@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Container, Hero, CounterContainer } from "./styles";
 
-import api from '../../services/api';
+import api from "../../services/api";
+import { token } from "../../services/auth.js";
 
-const dashBoardPage = () => {
+const DashBoardPage = () => {
   const [count, setCount] = useState(0);
-
 
   useEffect(() => {
     async function getContracts() {
-      const { contracts } = await api.get("/contracts").then(r => r.data);
+      const { contracts } = await api
+        .get("/contracts", {
+          headers: { Authorization: token() }
+        })
+        .then(r => r.data);
 
       setCount(contracts.length);
     }
@@ -36,4 +40,4 @@ const dashBoardPage = () => {
   );
 };
 
-export default dashBoardPage;
+export default DashBoardPage;
