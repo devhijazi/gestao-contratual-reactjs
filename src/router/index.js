@@ -29,14 +29,14 @@ const Routes = () => (
         path="/lista"
         component={Lista}
         privateRoute={true}
-        navbar={false}
+        navbar={true}
         footer={false}
       />
       <Route
         path="/overdue"
         component={Overdue}
         privateRoute={true}
-        navbar={false}
+        navbar={true}
         footer={false}
       />
 

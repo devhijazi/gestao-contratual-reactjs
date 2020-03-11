@@ -5,10 +5,11 @@ export const Container = styled.div`
   width: 100%;
   overflow: auto;
   padding: 0 auto;
+  margin-bottom: auto;
 `;
 
 export const RowHeader = styled.header`
-  background-color: #319e4e;
+  background-color: #bc96e6;
   color: white;
   h6 {
     font-weight: bold;

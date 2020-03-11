@@ -1,20 +1,17 @@
 import React from "react";
-
+import moment from "moment";
 import { Container, DeveloperContainer, DeveloperContent } from "./styles";
 
 const FooterComponent = () => {
+  const hoje = moment(Date.now()).format("DD/MM/YYYY");
 
   return (
     <Container>
       <DeveloperContainer>
         <DeveloperContent>
-          PRIVADO PARA:
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="http://www.campogrande.ms.gov.br/impcg/"
-          >
-            IMPCG 
+          Copyright  © 2020
+          <a target="_blank" rel="noopener noreferrer">
+            {hoje}
           </a>
         </DeveloperContent>
       </DeveloperContainer>
