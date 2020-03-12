@@ -1,9 +1,21 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 import api from "../../services/api";
 import { token } from "../../services/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 
-import { Container, Row, RowHeader, RowItems } from "./styles";
+import { Container, Row, RowHeader, RowItems, infosContainer } from "./styles";
+
+const IconsBtn = () => (
+  <>
+    <span>
+      <FontAwesomeIcon className="faicons" icon="trash" color="red" />
+    </span>
+    <span>
+      <FontAwesomeIcon className="faicons" icon="pen" color="green" />
+    </span>
+  </>
+);
 
 const ListPage = () => {
   const [loading, setLoading] = useState(true);
@@ -43,7 +55,7 @@ const ListPage = () => {
     { title: "Contato", property: "email" },
     { title: "Data Inicial", property: "createdAt" },
     { title: "Data Final", property: "finalAt" },
-    { title: "Descrição", property: "description" }
+    { title: "Descrição", property: "description", wrap: true }
   ];
 
   return (
@@ -56,9 +68,10 @@ const ListPage = () => {
           <RowItems>
             {itemList.map(d => (
               <p>
-               
+                <infosContainer>
                   {d[item.property]}
-               
+                  {item.wrap && <IconsBtn />}
+                </infosContainer>
               </p>
             ))}
           </RowItems>

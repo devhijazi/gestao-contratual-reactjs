@@ -33,3 +33,8 @@ export const RowItems = styled.div`
 export const Row = styled.div`
   flex-grow: 1;
 `;
+
+export const infosContainer = styled.div`
+  position: block;
+`;
+
