@@ -21,6 +21,7 @@ export const RowItems = styled.div`
   color: blue;
   font-weight: bold;
  
+
   p {
     :nth-child(even) {
       background-color: #f2f2f2;

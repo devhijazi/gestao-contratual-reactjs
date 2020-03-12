@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
-
-
 import api from "../../services/api";
 import { token } from "../../services/auth";
 
@@ -11,9 +9,9 @@ const ListPage = () => {
   const [loading, setLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
 
-  moment.locale('pt',{
-    calendar:{
-      sameElse: 'DD/MM/YYYY'
+  moment.locale("pt", {
+    calendar: {
+      sameElse: "DD/MM/YYYY"
     }
   });
 
@@ -28,8 +26,8 @@ const ListPage = () => {
       setItemList(
         contracts.map(c => ({
           ...c,
-          createdAt: moment(c.createdAt,['YYYY-MM-DD']).calendar(),
-          finalAt: moment(c.finalAt,['YYYY-MM-DD']).calendar()
+          createdAt: moment(c.createdAt, ["YYYY-MM-DD"]).calendar(),
+          finalAt: moment(c.finalAt, ["YYYY-MM-DD"]).calendar()
         }))
       );
       setLoading(false);
@@ -49,20 +47,24 @@ const ListPage = () => {
   ];
 
   return (
-      <Container>
-        {items.map(item => (
-          <Row>
-            <RowHeader>
-              <h6>{item.title}</h6>
-            </RowHeader>
-            <RowItems>
-              {itemList.map(d => (
-                <p>{d[item.property]}</p>
-              ))}
-            </RowItems>
-          </Row>
-        ))}
-      </Container>
+    <Container>
+      {items.map(item => (
+        <Row>
+          <RowHeader>
+            <h6>{item.title}</h6>
+          </RowHeader>
+          <RowItems>
+            {itemList.map(d => (
+              <p>
+               
+                  {d[item.property]}
+               
+              </p>
+            ))}
+          </RowItems>
+        </Row>
+      ))}
+    </Container>
   );
 };
 

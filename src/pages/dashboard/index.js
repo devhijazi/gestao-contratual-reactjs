@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Hero, CounterContainer } from "./styles";
+import { Container, Hero } from "./styles";
 
 import api from "../../services/api";
 import { token } from "../../services/auth.js";
