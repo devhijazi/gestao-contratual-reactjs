@@ -10,7 +10,7 @@ const FooterComponent = () => {
       <DeveloperContainer>
         <DeveloperContent>
           Copyright  © 2020
-          <a target="_blank" rel="noopener noreferrer">
+          <a href="github.com/devhijazi">
             {hoje}
           </a>
         </DeveloperContent>

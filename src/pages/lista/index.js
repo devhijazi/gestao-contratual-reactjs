@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 
@@ -28,8 +29,22 @@ const ListPage = () => {
     }
   });
 
-  function handleTrash(itemId) {
-    console.log(itemId, "itemId");
+  async function handleTrash(itemId) {
+    try {
+      const deleted = window.confirm("Deseja realmente excluir este contrato?");
+      if (deleted) {
+        await api
+          .delete(`/contracts/${itemId}`, {
+            headers: { Authorization: token() }
+          })
+          .then(() => window.location.reload());
+      }
+    } catch (e) {
+      console.log(e)
+      const response = e.response;
+      const error = (response && response.data.error) || "Erro ao deletar";
+      toast.error(error || "Ocorreu um erro ao deletar este contrato");
+    }
   }
 
   useEffect(() => {

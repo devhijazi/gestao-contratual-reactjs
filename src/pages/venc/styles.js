@@ -32,3 +32,9 @@ export const RowItems = styled.div`
 export const Row = styled.div`
   flex-grow: 1;
 `;
+export const IconsContainer = styled.div`
+  svg {
+    font-size: 16px;
+    margin: 0 4px;
+  }
+`;
