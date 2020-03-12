@@ -20,7 +20,6 @@ export const RowItems = styled.div`
   background-color: #e9e8ff;
   color: blue;
   font-weight: bold;
- 
 
   p {
     :nth-child(even) {
@@ -34,7 +33,9 @@ export const Row = styled.div`
   flex-grow: 1;
 `;
 
-export const infosContainer = styled.div`
-  position: block;
+export const IconsContainer = styled.div`
+  svg {
+    font-size: 16px;
+    margin: 0 4px;
+  }
 `;
-

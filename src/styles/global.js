@@ -32,6 +32,13 @@ export default createGlobalStyle`
     text-decoration: none;
   }
 
+  a, 
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
   .main-container {
     display: flex;
     width: 100%;
