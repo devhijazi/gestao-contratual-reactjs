@@ -11,7 +11,6 @@ import registerUserLogo from '../../assets/others/new_user.png';
 
 const RegisterPage = () => {
   const [passwordShowing, setPasswordShowing] = useState(false);
-
   function handlePassword() {
     setPasswordShowing(!passwordShowing);
   }
@@ -19,9 +18,8 @@ const RegisterPage = () => {
   async function handleSubmit(data) {
     try {
       await api.post('/admin', data);
-
       const alerted = window.confirm('Usuário registrado com sucesso.');
-      if (alerted) window.location.reload();
+      if (alerted) window.location.reload('/');
     } catch (e) {
       const response = e.response;
       const error = (response && response.data.error) || 'Ocorreu um erro';
