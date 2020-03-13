@@ -41,7 +41,7 @@ const Routes = () => (
         footer={false}
       />
       <Route
-        path="/edit"
+        path="/edit/:id"
         component={Edit}
         privateRoute={true}
         navbar={false}
