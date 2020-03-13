@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Container, Hero } from "./styles";
+import { Container, Hero, FullContainer } from "./styles";
 
 import api from "../../services/api";
 import { token } from "../../services/auth.js";
 
+import Spinner from "../../components/Loading/Spinner";
+
 const DashBoardPage = () => {
   const [count, setCount] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getContracts() {
@@ -16,9 +19,19 @@ const DashBoardPage = () => {
         .then(r => r.data);
 
       setCount(contracts.length);
+      setLoading(false);
     }
     getContracts();
   }, []);
+
+  if (loading)
+    return (
+      <FullContainer>
+        <Spinner>
+          <h1>Carregando</h1>
+        </Spinner>
+      </FullContainer>
+    );
 
   return (
     <Container>

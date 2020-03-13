@@ -5,7 +5,16 @@ import moment from "moment";
 import api from "../../services/api";
 import { token } from "../../services/auth";
 
-import { Container, Row, RowHeader, RowItems, IconsContainer } from "./styles";
+import Spinner from "../../components/Loading/Spinner";
+
+import {
+  Container,
+  Row,
+  RowHeader,
+  RowItems,
+  IconsContainer,
+  FullContainer
+} from "./styles";
 
 const IconsBtn = ({ item, handlePen }) => (
   <IconsContainer>
@@ -50,14 +59,21 @@ const VencPage = () => {
     getContracts();
   }, []);
 
-  if (loading) return <h1>Carregando Banco de dados</h1>;
+  if (loading)
+    return (
+      <FullContainer>
+        <Spinner>
+          <h1>Carregando</h1>
+        </Spinner>
+      </FullContainer>
+    );
 
   const items = [
     { title: "Titulo", property: "name" },
     { title: "Contato", property: "email" },
     { title: "Data Inicial", property: "createdAt" },
     { title: "Data Final", property: "finalAt" },
-    { title: "Adicionado Por", property: "createdBy" },
+    { title: "Dias Restantes", property: "Restam 30 dias..." },
     { title: "Editar" }
   ];
 
