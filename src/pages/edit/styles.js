@@ -72,3 +72,9 @@ export const FormButton = styled.button`
   box-shadow: 1px 1px 2px black;
   background: greenyellow;
 `;
+export const FullContainer = styled.div`
+  height: calc(100vh - 80px);
+  @media (max-width: 900px) {
+    height: calc(100vh - 40px);
+  }
+`;

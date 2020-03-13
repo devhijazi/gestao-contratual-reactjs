@@ -6,7 +6,16 @@ import moment from "moment";
 import api from "../../services/api";
 import { token } from "../../services/auth";
 
-import { Container, Row, RowHeader, RowItems, IconsContainer } from "./styles";
+import Spinner from "../../components/Loading/Spinner";
+
+import {
+  Container,
+  Row,
+  RowHeader,
+  RowItems,
+  IconsContainer,
+  FullContainer
+} from "./styles";
 
 const IconsBtn = ({ item, handleTrash }) => (
   <IconsContainer>
@@ -40,7 +49,7 @@ const ListPage = () => {
           .then(() => window.location.reload());
       }
     } catch (e) {
-      console.log(e)
+      console.log(e);
       const response = e.response;
       const error = (response && response.data.error) || "Erro ao deletar";
       toast.error(error || "Ocorreu um erro ao deletar este contrato");
@@ -68,7 +77,14 @@ const ListPage = () => {
     getContracts();
   }, []);
 
-  if (loading) return <h1>Carregando Banco de dados</h1>;
+  if (loading)
+    return (
+      <FullContainer>
+        <Spinner>
+          <h1>Carregando</h1>
+        </Spinner>
+      </FullContainer>
+    );
 
   const items = [
     { title: "Titulo", property: "name" },
@@ -81,26 +97,26 @@ const ListPage = () => {
 
   return (
     <Container>
-      {items.map((item, index) => (
-        <Row>
-          <RowHeader>
-            <h6>{item.title}</h6>
-          </RowHeader>
-          <RowItems>
-            {itemList.map(d =>
-              index + 1 === items.length ? (
-                <p>
-                  <IconsBtn item={d} handleTrash={handleTrash} />
-                </p>
-              ) : (
-                <p>
-                  <span> {d[item.property]}</span>
-                </p>
-              )
-            )}
-          </RowItems>
-        </Row>
-      ))}
+        {items.map((item, index) => (
+          <Row>
+            <RowHeader>
+              <h6>{item.title}</h6>
+            </RowHeader>
+            <RowItems>
+              {itemList.map(d =>
+                index + 1 === items.length ? (
+                  <p>
+                    <IconsBtn item={d} handleTrash={handleTrash} />
+                  </p>
+                ) : (
+                  <p>
+                    <span> {d[item.property]}</span>
+                  </p>
+                )
+              )}
+            </RowItems>
+          </Row>
+        ))}
     </Container>
   );
 };
