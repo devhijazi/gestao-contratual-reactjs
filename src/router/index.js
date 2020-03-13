@@ -10,7 +10,8 @@ import {
   Lista, // listagem de contratos ( delete e edit )
   NotFound, // pagina de erro
   Register, //registra um novo usuário
-  Overdue // contratos próximos a dada de vencimento
+  Overdue, // contratos próximos a dada de vencimento
+  Edit // edita os contratos
 } from "../pages";
 
 const Routes = () => (
@@ -37,6 +38,13 @@ const Routes = () => (
         component={Overdue}
         privateRoute={true}
         navbar={true}
+        footer={false}
+      />
+      <Route
+        path="/edit"
+        component={Edit}
+        privateRoute={true}
+        navbar={false}
         footer={false}
       />
 

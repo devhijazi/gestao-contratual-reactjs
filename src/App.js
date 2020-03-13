@@ -9,8 +9,13 @@ import Routes from "./router";
 
 import GlobalStyle from "./styles/global.js";
 
+import api from "./services/api";
+import { token } from "./services/auth";
+
 library.add(faTrash);
 library.add(faPen);
+
+api.defaults.headers.Authorization = token();
 
 const App = () => (
   <section className="main-container">
