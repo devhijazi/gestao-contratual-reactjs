@@ -9,8 +9,8 @@ const FooterComponent = () => {
     <Container>
       <DeveloperContainer>
         <DeveloperContent>
-          Copyright  © 2020
-          <a href="github.com/devhijazi">
+          Copyright  © 
+          <a href="https://github.com/devhijazi">
             {hoje}
           </a>
         </DeveloperContent>

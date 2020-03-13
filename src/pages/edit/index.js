@@ -8,12 +8,12 @@ import { Form, Input } from "@rocketseat/unform";
 import { Container, Hero, FormContainer, Row, FormButton } from "./styles";
 
 const EditPage = ({ match: { params }, history }) => {
-  async function handleUpdate(itemId) {
+  async function handleUpdate(data) {
     try {
       const updated = window.confirm("Contrato atualizado com sucesso!");
       if (updated) {
         await api
-          .post(`/contracts/update/id`)
+          .post(`/contracts/update/:id`,{data})
           .then(() => window.close());
       }
     } catch (e) {
