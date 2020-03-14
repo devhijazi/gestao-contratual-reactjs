@@ -8,7 +8,15 @@ import * as Yup from "yup";
 import api from "../../services/api";
 import { authenticate, setUser } from "../../services/auth";
 
-import { Container, FormContainer, FormButton, FormInput } from "./styles";
+import Spinner from "../../components/Loading/Spinner";
+
+import {
+  Container,
+  FormContainer,
+  FormButton,
+  FormInput,
+  FullContainer
+} from "./styles";
 
 const Schema = Yup.object().shape({
   password: Yup.string().required("Senha obrigatória!"),
@@ -21,6 +29,7 @@ const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
 const HomePage = ({ history }) => {
   const [passwordShowing, setPasswordShowing] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   function handlePassword() {
     setPasswordShowing(!passwordShowing);
@@ -44,8 +53,16 @@ const HomePage = ({ history }) => {
         : (response && response.data.error) || "Ocorreu um erro";
       toast.error(error || "Usuário ou senha inválido.");
     }
+    setLoading(false);
   }
-
+  if (loading)
+    return (
+      <FullContainer>
+        <Spinner>
+          <h1>Carregando</h1>
+        </Spinner>
+      </FullContainer>
+    );
   return (
     <Container>
       <Form onSubmit={handleSubmit}>

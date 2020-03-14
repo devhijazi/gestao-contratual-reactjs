@@ -123,3 +123,9 @@ export const FormInput = styled.div`
     }
   }
 `;
+export const FullContainer = styled.div`
+  height: calc(100vh - 80px);
+  @media (max-width: 900px) {
+    height: calc(100vh - 40px);
+  }
+`;
