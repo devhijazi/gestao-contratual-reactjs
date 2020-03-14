@@ -40,11 +40,7 @@ const VencPage = () => {
 
   useEffect(() => {
     async function getContracts() {
-      const { contracts } = await api
-        .get("/contracts", {
-          headers: { Authorization: token() }
-        })
-        .then(r => r.data);
+      const { contracts } = await api.get("/contracts").then(r => r.data);
 
       setItemList(
         contracts.map(c => ({

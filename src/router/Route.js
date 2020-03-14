@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
 //importando o auth hurdur
-import { isAuthenticated } from "../services/auth.js";
+import api from "../services/api";
+import { isAuthenticated, token } from "../services/auth";
 
 //Components
 import Navbar from "../components/Header";
@@ -15,6 +16,8 @@ const RouteWrapper = ({
   footer = true,
   ...rest
 }) => {
+  api.defaults.headers.Authorization = token();
+
   const authenticated = isAuthenticated();
   if (privateRoute && !authenticated) return <Redirect to="/" />; //se não for autenticado retorna pra home
 
@@ -33,4 +36,5 @@ const RouteWrapper = ({
     />
   );
 };
+
 export default RouteWrapper;

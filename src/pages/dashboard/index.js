@@ -6,7 +6,6 @@ import { token } from "../../services/auth.js";
 
 import Spinner from "../../components/Loading/Spinner";
 
-
 const DashBoardPage = () => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);

@@ -7,7 +7,7 @@ import {
   Home, //Main Login
   DashBoard, //Main Dashboard + infos do sistema
   Cadastro, // registra contratos no banco de dados
-  Lista, // listagem de contratos ( delete e edit )
+  List, // listgem de contratos ( delete e edit )
   NotFound, // pagina de erro
   Register, //registra um novo usuário
   Overdue, // contratos próximos a dada de vencimento
@@ -27,8 +27,8 @@ const Routes = () => (
       <Route path="/dashboard" component={DashBoard} privateRoute={true} />
       <Route path="/cadastro" component={Cadastro} privateRoute={true} />
       <Route
-        path="/lista"
-        component={Lista}
+        path="/list"
+        component={List}
         privateRoute={true}
         navbar={true}
         footer={false}

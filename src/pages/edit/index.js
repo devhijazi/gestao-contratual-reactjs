@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import api from "../../services/api";
 import { Form, Input } from "@rocketseat/unform";
 
-
 import { Container, Hero, FormContainer, Row, FormButton } from "./styles";
 
 const EditPage = ({ match: { params }, history }) => {
@@ -19,12 +18,12 @@ const EditPage = ({ match: { params }, history }) => {
         await api.put(`/contracts/${id}`, data).then(() => window.close());
       }
     } catch (e) {
-      console.log(e);
       const response = e.response;
       const error = (response && response.data.error) || "Erro ao atualizar";
       toast.error(error || "Ocorreu um erro ao atualizar o contrato");
     }
   }
+  
   useEffect(() => {
     async function getContract() {
       try {
@@ -34,7 +33,7 @@ const EditPage = ({ match: { params }, history }) => {
 
         setInitialData(contract);
       } catch (e) {
-        history.push("/lista");
+        history.push("/list");
       }
     }
     getContract();
