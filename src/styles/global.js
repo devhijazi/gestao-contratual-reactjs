@@ -7,13 +7,11 @@ import { createGlobalStyle } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
-
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'PT Sans Narrow', sans-serif !important;
+    font-family: 'Quicksand', sans-serif !important;
   }
 
   html {
@@ -31,6 +29,10 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
   }
+  h6{
+    font-family: 'Roboto Condensed', sans-serif !important;
+  }
+ 
 
   a, 
   button {

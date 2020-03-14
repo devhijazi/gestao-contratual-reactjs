@@ -6,12 +6,11 @@ export const Container = styled.div`
   margin-bottom: auto;
   margin-top: 5px;
 
-
-  h1 {
-    text-align: center;
-    font-size: 40px;
+  h3{
+    font-size: 200%;
+    margin: auto;
+    padding: 20px;
     font-weight: bold;
-    color: black;
   }
 `;
 
@@ -23,9 +22,15 @@ export const Hero = styled.section`
   * {
     text-align: left !important;
   }
-  span{
+  span {
     color: #6633f2;
     justify-content: space-between;
+  }
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
   }
 `;
 export const FullContainer = styled.div`

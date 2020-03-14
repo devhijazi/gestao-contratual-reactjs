@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const RowHeader = styled.header`
-  background-color: #bc96e6;
+  background-color: #8c08ff;
   color: white;
   h6 {
     font-weight: bold;

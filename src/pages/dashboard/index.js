@@ -6,6 +6,8 @@ import { token } from "../../services/auth.js";
 
 import Spinner from "../../components/Loading/Spinner";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const DashBoardPage = () => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -46,6 +48,8 @@ const DashBoardPage = () => {
           </div>
         </div>
       </Hero>
+
+      <h3>Banco de dados : 10 próximo(s) a vencer...</h3>
     </Container>
   );
 };
