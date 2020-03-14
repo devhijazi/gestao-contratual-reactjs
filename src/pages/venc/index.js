@@ -12,6 +12,7 @@ import { Container, FullContainer } from "./styles";
 
 const VencPage = () => {
   const [loading, setLoading] = useState(true);
+
   const [itemList, setItemList] = useState([]);
   const [pageInfo, setPageInfo] = useState({ inPage: 0 });
 
@@ -29,7 +30,7 @@ const VencPage = () => {
 
   async function getContracts(page = 0) {
     const { contracts, ...rest } = await api
-      .get(`/contracts?page=${page}`)
+      .get(`/contracts/due?page=${page}`)
       .then(r => r.data);
 
     setItemList(

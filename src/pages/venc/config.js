@@ -5,6 +5,6 @@ module.exports = {
     { title: "Data Inicial", property: "createdAt" },
     { title: "Data Final", property: "finalAt" },
     { title: "Dias Restantes", property: "Restam 30 dias..." },
-    { title: "Editar" }
+    { title: "Ação" }
   ]
 };
