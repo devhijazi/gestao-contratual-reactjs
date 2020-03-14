@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { Form, Input } from "@rocketseat/unform";
 
 import api from "../../services/api";
-import { token } from "../../services/auth";
 
 import {
   Container,
@@ -14,16 +13,13 @@ import {
   FormButton
 } from "./styles";
 
-const RegisterPage = () => {
+const RegisterPage = ({ history }) => {
   async function handleSubmit(data) {
-    console.log(data);
     try {
-      await api.post("/contracts", data, {
-        headers: { Authorization: token() }
-      });
+      await api.post("/contracts", data);
 
       const alerted = window.confirm("Cadastro salvo com sucesso!");
-      if (alerted) window.location.reload()
+      if (alerted) history.push("/list");
     } catch (e) {
       const response = e.response;
       const error = (response && response.data.error) || "Ocorreu um erro";
