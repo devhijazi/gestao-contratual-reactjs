@@ -8,14 +8,12 @@ import * as Yup from "yup";
 import api from "../../services/api";
 import { authenticate, setUser } from "../../services/auth";
 
-import Spinner from "../../components/Loading/Spinner";
 
 import {
   Container,
   FormContainer,
   FormButton,
   FormInput,
-  FullContainer
 } from "./styles";
 
 const Schema = Yup.object().shape({
