@@ -60,7 +60,7 @@ const VencPage = () => {
   return (
     <Container>
       <div className="items">
-        <ItemsComponent list={itemList} handlePen={handlePen} />
+        <ItemsComponent list={itemList}/>
       </div>
       <div className="navigation">
         <PaginationComponent
