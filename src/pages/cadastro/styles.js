@@ -11,6 +11,7 @@ export const Container = styled.div`
     font-size: 40px;
     font-weight: bold;
     color: black;
+    
   }
 `;
 
@@ -37,6 +38,7 @@ export const FormContainer = styled.div`
     margin-top: 50px;
     margin-bottom: 60px;
     color: #000;
+    
   }
 
   input,
@@ -51,6 +53,7 @@ export const Row = styled.div`
   justify-content: space-between;
   color: black;
   padding: 2px 10px;
+  font-weight: bold;
 `;
 
 export const Column = styled.div`

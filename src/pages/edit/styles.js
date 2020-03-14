@@ -53,6 +53,7 @@ export const Row = styled.div`
   justify-content: space-between;
   color: black;
   padding: 2px 10px;
+  font-weight: bold;
   h1 {
     margin: auto;
     margin-top: 3px;

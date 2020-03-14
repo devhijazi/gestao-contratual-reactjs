@@ -6,7 +6,6 @@ import { token } from "../../services/auth.js";
 
 import Spinner from "../../components/Loading/Spinner";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DashBoardPage = () => {
   const [count, setCount] = useState(0);
