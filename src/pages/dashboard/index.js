@@ -6,7 +6,7 @@ import { token } from "../../services/auth.js";
 
 import Spinner from "../../components/Loading/Spinner";
 
-import CIcon from "../../assets/svg/contract1.svg";
+import CIcon from "../../assets/svg/cloud.svg";
 import Alert from '../../assets/svg/alert.svg'
 
 const DashBoardPage = () => {
@@ -51,12 +51,11 @@ const DashBoardPage = () => {
       </Hero>
       <RowGrid>
         <RowItems>
-          <h1>Total</h1>
           <img src={CIcon} alt="Contract Logo"></img>
           <h2>120</h2>
         </RowItems>
         <RowItems>
-        <h1>Vencidos</h1>
+       
           <img src={Alert} alt="Alert Icon"></img>
           <h2>120</h2>
         </RowItems>

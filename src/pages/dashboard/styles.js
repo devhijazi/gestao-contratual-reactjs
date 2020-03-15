@@ -50,10 +50,10 @@ export const RowGrid = styled.div`
 export const RowItems = styled.div`
   margin: 30px;
   text-align: center;
-
+  
   img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
   }
   h1{
     font-weight: bold;
