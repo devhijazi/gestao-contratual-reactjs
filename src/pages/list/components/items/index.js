@@ -5,13 +5,6 @@ import { items } from "../../config";
 
 import { Row, RowHeader, RowItems, IconsContainer } from "./styles";
 
-const HandleItem = ({ index, length, item, handleTrash, children }) => {
-  if (index === length) {
-    return <IconsBtn item={item} handleTrash={handleTrash} />;
-  }
-  return <span>{children}</span>;
-};
-
 const ItemsComponent = ({ list, handleTrash }) => {
   if (!list.length) return <h1>Nenhum contrato cadastrado</h1>;
 
@@ -36,6 +29,13 @@ const ItemsComponent = ({ list, handleTrash }) => {
       </RowItems>
     </Row>
   ));
+};
+
+const HandleItem = ({ index, length, item, handleTrash, children }) => {
+  if (index === length) {
+    return <IconsBtn item={item} handleTrash={handleTrash} />;
+  }
+  return <span>{children}</span>;
 };
 
 const IconsBtn = ({ item, handleTrash }) => (

@@ -8,7 +8,6 @@ import ItemsComponent from "./components/items";
 import PaginationComponent from "./components/pagination";
 
 import api from "../../services/api";
-import { token } from "../../services/auth";
 
 import { Container, FullContainer } from "./styles";
 
@@ -40,14 +39,14 @@ const ListPage = () => {
 
   async function getContracts(page = 0) {
     const { contracts, ...rest } = await api
-      .get(`/contracts?page=${page}`, { headers: { Authorization: token() } })
+      .get(`/contracts?page=${page}`)
       .then(r => r.data);
 
     setItemList(
       contracts.map(c => ({
         ...c,
-        createdAt: moment(c.createdAt, ["YYYY-MM-DD"]).calendar(),
-        finalAt: moment(c.finalAt, ["YYYY-MM-DD"]).calendar()
+        createdAt: moment(c.createdAt, ["YYYY-MM-DD"]).format("L"),
+        finalAt: moment(c.finalAt, ["YYYY-MM-DD"]).format("L")
       }))
     );
     setPageInfo({ ...pageInfo, ...rest });
@@ -56,7 +55,7 @@ const ListPage = () => {
 
   useEffect(() => {
     getContracts();
-  }, []);
+  }, [getContracts]);
 
   if (loading) {
     return (

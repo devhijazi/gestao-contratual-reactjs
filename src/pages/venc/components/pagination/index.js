@@ -3,7 +3,8 @@ import React from "react";
 import { Button } from "./styles";
 
 const PaginationComponent = ({ info, handleClickPagination }) => {
-  const { inPage, pages } = info;
+  const { inPage, pages, length } = info;
+  if (!length) return <></>;
 
   return Array(pages + 1)
     .fill({})

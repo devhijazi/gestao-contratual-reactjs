@@ -21,13 +21,6 @@ const VencPage = () => {
     return getContracts(page);
   }
 
-  //Moment fix
-  moment.locale("pt", {
-    calendar: {
-      sameElse: "DD/MM/YYYY"
-    }
-  });
-
   async function getContracts(page = 0) {
     const { contracts, ...rest } = await api
       .get(`/contracts/due?page=${page}`)
@@ -36,8 +29,10 @@ const VencPage = () => {
     setItemList(
       contracts.map(c => ({
         ...c,
-        createdAt: moment(c.createdAt, ["YYYY-MM-DD"]).calendar(),
-        finalAt: moment(c.finalAt, ["YYYY-MM-DD"]).calendar()
+        createdAt: moment(c.createdAt, ["YYYY-MM-DD"]).format("L"),
+        finalAt: moment(c.finalAt, ["YYYY-MM-DD"]).format("L"),
+        createdTimestamp: Date.parse(c.createdAt),
+        finalTimestamp: Date.parse(c.finalAt)
       }))
     );
     setPageInfo({ ...pageInfo, ...rest });
@@ -61,7 +56,7 @@ const VencPage = () => {
   return (
     <Container>
       <div className="items">
-        <ItemsComponent list={itemList}/>
+        <ItemsComponent list={itemList} />
       </div>
       <div className="navigation">
         <PaginationComponent

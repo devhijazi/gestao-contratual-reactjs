@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import moment from "moment";
 
 //importando o auth hurdur
 import api from "../services/api";
@@ -17,6 +18,8 @@ const RouteWrapper = ({
   ...rest
 }) => {
   api.defaults.headers.Authorization = token();
+
+  moment.locale("pt-br");
 
   const authenticated = isAuthenticated();
   if (privateRoute && !authenticated) return <Redirect to="/" />; //se não for autenticado retorna pra home

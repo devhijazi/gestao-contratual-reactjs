@@ -23,12 +23,10 @@ export async function authenticate(token) {
   return sessionStorage.setItem("@token", token);
 }
 
-
 export function logout() {
- sessionStorage.removeItem("@token");
+  sessionStorage.removeItem("@token");
 
- return window.location.reload();
-
+  return window.location.reload();
 }
 
 // User
