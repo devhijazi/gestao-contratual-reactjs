@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin-bottom: auto;
   margin-top: 5px;
 
-  h3{
+  h3 {
     font-size: 200%;
     margin: auto;
     padding: 20px;
@@ -37,5 +37,32 @@ export const FullContainer = styled.div`
   height: calc(100vh - 80px);
   @media (max-width: 900px) {
     height: calc(100vh - 40px);
+  }
+`;
+
+export const RowGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const RowItems = styled.div`
+  margin: 30px;
+  text-align: center;
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+  h1{
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  h2{
+    font-weight: bold;
+    font-size: 35px;
+
   }
 `;

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Container, Hero, FullContainer } from "./styles";
+import { Container, Hero, FullContainer, RowGrid, RowItems } from "./styles";
 
 import api from "../../services/api";
 import { token } from "../../services/auth.js";
 
 import Spinner from "../../components/Loading/Spinner";
+
+import CIcon from "../../assets/svg/contract1.svg";
+import Alert from '../../assets/svg/alert.svg'
 
 const DashBoardPage = () => {
   const [count, setCount] = useState(0);
@@ -46,8 +49,18 @@ const DashBoardPage = () => {
           </div>
         </div>
       </Hero>
-
-      <h3>Banco de dados : 10 próximo(s) a vencer...</h3>
+      <RowGrid>
+        <RowItems>
+          <h1>Total</h1>
+          <img src={CIcon} alt="Contract Logo"></img>
+          <h2>120</h2>
+        </RowItems>
+        <RowItems>
+        <h1>Vencidos</h1>
+          <img src={Alert} alt="Alert Icon"></img>
+          <h2>120</h2>
+        </RowItems>
+      </RowGrid>
     </Container>
   );
 };
