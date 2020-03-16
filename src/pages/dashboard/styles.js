@@ -6,18 +6,18 @@ export const Container = styled.div`
   margin-bottom: auto;
   margin-top: 5px;
 
-  h3 {
-    font-size: 200%;
-    margin: auto;
-    padding: 20px;
-    font-weight: bold;
+  h1{
+    text-align:center;
+    font-size: 50px;
+    color:black;
   }
+
 `;
 
 export const Hero = styled.section`
   background-color: #bc96e6;
-  margin-top: 40px;
-  margin-bottom: 60px;
+  margin-top: 20px;
+
 
   * {
     text-align: left !important;
@@ -45,24 +45,22 @@ export const RowGrid = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+ 
 `;
 
 export const RowItems = styled.div`
   margin: 30px;
   text-align: center;
-  
+
   img {
-    width: 50px;
-    height: 50px;
-  }
-  h1{
-    font-weight: bold;
-    font-size: 30px;
+    width: 60px;
+    height: 60px;
   }
 
-  h2{
+  h2 {
     font-weight: bold;
-    font-size: 35px;
+    font-size: 50px;
+    color: black;
 
   }
 `;

@@ -23,7 +23,7 @@ const ItemsComponent = ({ list, handlePen }) => {
               length={items.length}
               handlePen={handlePen}
             >
-              {item.wrap ? <Days item={d} /> : d[item.property]}
+              {item.wrap ? <Days item={d} /> : d[item.property]}...
             </HandleItem>
           </p>
         ))}

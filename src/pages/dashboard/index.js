@@ -1,27 +1,26 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import React, { useState, useEffect } from "react";
 import { Container, Hero, FullContainer, RowGrid, RowItems } from "./styles";
 
 import api from "../../services/api";
-import { token } from "../../services/auth.js";
 
 import Spinner from "../../components/Loading/Spinner";
 
 import CIcon from "../../assets/svg/cloud.svg";
-import Alert from '../../assets/svg/alert.svg'
+import Alert from "../../assets/svg/alert.svg";
 
 const DashBoardPage = () => {
-  const [count, setCount] = useState(0);
+  const [data, setData] = useState({ fullLength: 0, dueLength: 0 });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function getContracts() {
-      const { contracts } = await api
-        .get("/contracts", {
-          headers: { Authorization: token() }
-        })
-        .then(r => r.data);
-
-      setCount(contracts.length);
+      const [fullLength, dueLength] = await Promise.all(
+        ["", "/due"].map(r =>
+          api.get(`/contracts${r}`).then(({ data }) => data.contracts)
+        )
+      );
+      setData({fullLength, dueLength});
       setLoading(false);
     }
     getContracts();
@@ -41,23 +40,22 @@ const DashBoardPage = () => {
       <Hero className="hero">
         <div className="hero-body">
           <div className="container">
-            <h1 className="title">Gestão Contratual</h1>
-            <h2 className="subtitle">
-              Olá, o banco de dados do sistema informa que há{" "}
-              <span>{count}</span> arquivos registrados.
-            </h2>
+            <h1 className="title">Contrato Cloud</h1>
+            <h2 className="subtitle">Gestão contratual</h2>
           </div>
         </div>
       </Hero>
+      <h1>Informações da Cloud.</h1>
       <RowGrid>
         <RowItems>
           <img src={CIcon} alt="Contract Logo"></img>
-          <h2>120</h2>
+          <h2>{data.fullLength.length}</h2>
+          <p>Gravados</p>
         </RowItems>
         <RowItems>
-       
           <img src={Alert} alt="Alert Icon"></img>
-          <h2>120</h2>
+          <h2>{data.dueLength.length}</h2>
+          <p>Prestes a vencer...</p>
         </RowItems>
       </RowGrid>
     </Container>
