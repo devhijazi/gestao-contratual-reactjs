@@ -13,7 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, "src", "index.js")
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "production","dist"),
     filename: "bundle.js",
     filename: "main.js"
   },
@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html")
+      template: path.resolve(__dirname, "public", "template.html")
     }),
     new webpack.DefinePlugin({
       "process.env": envObject
