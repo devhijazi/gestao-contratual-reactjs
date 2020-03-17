@@ -26,6 +26,7 @@ const Schema = Yup.object().shape({
 const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
 const HomePage = ({ history }) => {
+ 
   const [passwordShowing, setPasswordShowing] = useState(false);
  
   function handlePassword() {
@@ -50,6 +51,8 @@ const HomePage = ({ history }) => {
         : (response && response.data.error) || "Ocorreu um erro";
       toast.error(error || "Usuário ou senha inválido.");
     }
+    console.log(process.env.REACT_APP_API_URI)
+   
    
   }
   return (
