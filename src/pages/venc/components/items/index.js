@@ -43,7 +43,11 @@ const HandleItem = ({ index, length, item, handlePen, children }) => {
 const Days = ({ item }) => {
   const { createdTimestamp, finalTimestamp } = item;
   return (
-    <span>{moment.duration(finalTimestamp - (Date.now() + createdTimestamp)).format('d [dias..]')}</span>
+    <span>
+      {moment
+        .duration(finalTimestamp - Date.now())
+        .format("d [dias]")}
+    </span>
   );
 };
 
