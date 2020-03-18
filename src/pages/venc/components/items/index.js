@@ -14,6 +14,7 @@ const ItemsComponent = ({ list, handlePen }) => {
       <RowHeader>
         <h6>{item.title}</h6>
       </RowHeader>
+
       <RowItems>
         {list.map(d => (
           <p key={d._id}>
@@ -23,7 +24,7 @@ const ItemsComponent = ({ list, handlePen }) => {
               length={items.length}
               handlePen={handlePen}
             >
-              {item.wrap ? <Days item={d} /> : d[item.property]}...
+              {item.wrap ? <Days item={d} /> : d[item.property]}
             </HandleItem>
           </p>
         ))}
@@ -42,7 +43,7 @@ const HandleItem = ({ index, length, item, handlePen, children }) => {
 const Days = ({ item }) => {
   const { createdTimestamp, finalTimestamp } = item;
   return (
-    <span>{moment.duration(finalTimestamp - createdTimestamp).format('d [dias]')}</span>
+    <span>{moment.duration(finalTimestamp - (Date.now() + createdTimestamp)).format('d [dias..]')}</span>
   );
 };
 
